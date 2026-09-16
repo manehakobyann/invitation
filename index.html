@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,11 +38,59 @@ body{
     color:var(--dark);
     font-family:'Montserrat',sans-serif;
     font-weight:300;
+    overflow-x:hidden;
 }
 
-/* =========================
+/* =========================================================
+   MUSIC PLAYER
+========================================================= */
+
+.music-player{
+    position:fixed;
+    top:22px;
+    right:22px;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.music-btn{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.65);
+    background:rgba(45,36,30,.42);
+    backdrop-filter:blur(10px);
+    color:white;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:16px;
+    transition:.3s;
+}
+
+.music-btn:hover{
+    background:rgba(255,255,255,.9);
+    color:#3d332d;
+}
+
+.volume{
+    width:0;
+    opacity:0;
+    transition:.3s;
+    accent-color:white;
+}
+
+.music-player:hover .volume{
+    width:75px;
+    opacity:1;
+}
+
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero{
     position:relative;
@@ -69,9 +118,9 @@ body{
     background:
         linear-gradient(
             to bottom,
-            rgba(20,15,12,.05) 30%,
+            rgba(20,15,12,.03) 20%,
             rgba(20,15,12,.18) 60%,
-            rgba(20,15,12,.72) 100%
+            rgba(20,15,12,.75) 100%
         );
 }
 
@@ -111,9 +160,9 @@ body{
     letter-spacing:7px;
 }
 
-/* =========================
+/* =========================================================
    INTRO
-========================= */
+========================================================= */
 
 .intro{
     padding:120px 20px 100px;
@@ -153,9 +202,9 @@ body{
     color:#62574f;
 }
 
-/* =========================
+/* =========================================================
    DATE
-========================= */
+========================================================= */
 
 .date-section{
     background:#eee5da;
@@ -177,9 +226,9 @@ body{
     text-transform:uppercase;
 }
 
-/* =========================
+/* =========================================================
    COUNTDOWN
-========================= */
+========================================================= */
 
 .countdown{
     display:flex;
@@ -206,9 +255,9 @@ body{
     margin-top:5px;
 }
 
-/* =========================
-   TIMELINE
-========================= */
+/* =========================================================
+   EVENTS
+========================================================= */
 
 .events{
     padding:120px 20px;
@@ -255,6 +304,17 @@ body{
     color:#8d7d6d;
 }
 
+.event-info a{
+    color:inherit;
+    text-decoration:none;
+    border-bottom:1px solid #b7a38e;
+    transition:.3s;
+}
+
+.event-info a:hover{
+    color:#9b8064;
+}
+
 .event-image{
     width:100%;
     height:190px;
@@ -272,9 +332,9 @@ body{
     transform:scale(1.05);
 }
 
-/* =========================
-   LOCATION GALLERY
-========================= */
+/* =========================================================
+   LOCATIONS
+========================================================= */
 
 .locations{
     background:#f0e8df;
@@ -331,9 +391,67 @@ body{
     line-height:1.8;
 }
 
-/* =========================
+.location-content a{
+    color:inherit;
+    text-decoration:none;
+    border-bottom:1px solid #b7a38e;
+}
+
+.location-content a:hover{
+    color:#9b8064;
+}
+
+/* =========================================================
+   EXTRA PHOTO GALLERY
+========================================================= */
+
+.gallery{
+    padding:120px 20px;
+    background:#faf7f2;
+}
+
+.gallery-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.gallery-title h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:65px;
+    font-weight:400;
+}
+
+.gallery-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.gallery-item{
+    overflow:hidden;
+    height:500px;
+}
+
+.gallery-item:nth-child(2){
+    margin-top:80px;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .8s ease;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.04);
+}
+
+/* =========================================================
    DRESS CODE
-========================= */
+========================================================= */
 
 .dress{
     padding:120px 20px;
@@ -376,9 +494,9 @@ body{
     text-transform:uppercase;
 }
 
-/* =========================
+/* =========================================================
    RSVP
-========================= */
+========================================================= */
 
 .rsvp{
     background:#e8ddd0;
@@ -402,6 +520,16 @@ body{
 .rsvp-form{
     max-width:550px;
     margin:auto;
+    text-align:left;
+}
+
+.form-label{
+    display:block;
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#76675b;
+    margin:15px 0 8px;
 }
 
 .rsvp-form input,
@@ -412,10 +540,15 @@ body{
     border-bottom:1px solid #a99783;
     background:transparent;
     padding:18px 5px;
-    margin-bottom:20px;
+    margin-bottom:15px;
     font-family:'Montserrat',sans-serif;
     font-size:13px;
     outline:none;
+    color:#40362f;
+}
+
+.rsvp-form select{
+    cursor:pointer;
 }
 
 .rsvp-form textarea{
@@ -423,8 +556,51 @@ body{
     resize:none;
 }
 
+.side-question{
+    margin-top:25px;
+}
+
+.side-options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin:10px 0 20px;
+}
+
+.side-option{
+    position:relative;
+}
+
+.side-option input{
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
+}
+
+.side-option label{
+    display:block;
+    text-align:center;
+    padding:17px 10px;
+    border:1px solid #b7a38e;
+    cursor:pointer;
+    font-family:'Cormorant Garamond',serif;
+    font-size:19px;
+    transition:.3s;
+}
+
+.side-option label:hover{
+    background:rgba(255,255,255,.35);
+}
+
+.side-option input:checked + label{
+    background:#453a32;
+    color:white;
+    border-color:#453a32;
+}
+
 .rsvp-button{
-    margin-top:15px;
+    display:block;
+    margin:25px auto 0;
     background:#453a32;
     color:white;
     border:none;
@@ -440,9 +616,17 @@ body{
     background:#8c7965;
 }
 
-/* =========================
+.form-note{
+    text-align:center;
+    font-size:10px;
+    color:#8b7969;
+    margin-top:20px;
+    line-height:1.6;
+}
+
+/* =========================================================
    FINAL
-========================= */
+========================================================= */
 
 .final{
     padding:130px 20px;
@@ -473,9 +657,9 @@ body{
     color:#675b52;
 }
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer{
     padding:30px;
@@ -487,19 +671,29 @@ footer{
     text-transform:uppercase;
 }
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:750px){
+
+    .music-player{
+        top:15px;
+        right:15px;
+    }
+
+    .music-btn{
+        width:42px;
+        height:42px;
+    }
+
+    .volume{
+        display:none;
+    }
 
     .hero{
         height:88vh;
         min-height:600px;
-    }
-
-    .hero img{
-        object-position:center;
     }
 
     .hero-content{
@@ -552,7 +746,8 @@ footer{
 
     .events-title h2,
     .locations-title h2,
-    .dress h2{
+    .dress h2,
+    .gallery-title h2{
         font-size:50px;
     }
 
@@ -587,6 +782,21 @@ footer{
         padding:85px 20px;
     }
 
+    .gallery{
+        padding:85px 20px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .gallery-item,
+    .gallery-item:nth-child(2){
+        height:430px;
+        margin-top:0;
+    }
+
     .dress{
         padding:90px 20px;
     }
@@ -599,6 +809,10 @@ footer{
         font-size:55px;
     }
 
+    .side-options{
+        grid-template-columns:1fr;
+    }
+
 }
 
 </style>
@@ -608,9 +822,43 @@ footer{
 <body>
 
 
-<!-- =========================
+<!-- =========================================================
+     MUSIC
+========================================================= -->
+
+<audio id="weddingMusic" loop preload="auto">
+    <!-- Upload your legally obtained Adele - Lovesong file
+         and name it: lovesong.mp3 -->
+    <source src="lovesong.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-player">
+
+    <button
+        class="music-btn"
+        id="musicButton"
+        aria-label="Play or pause music">
+
+        ▶
+
+    </button>
+
+    <input
+        class="volume"
+        id="volumeControl"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.7"
+        aria-label="Volume">
+
+</div>
+
+
+<!-- =========================================================
      HERO
-========================= -->
+========================================================= -->
 
 <section class="hero">
 
@@ -637,9 +885,9 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      INTRO
-========================= -->
+========================================================= -->
 
 <section class="intro">
 
@@ -660,9 +908,9 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      DATE
-========================= -->
+========================================================= -->
 
 <section class="date-section">
 
@@ -675,9 +923,8 @@ footer{
     </div>
 
     <div class="date-month">
-        Tuesday · August · 2028
+        August · 2028
     </div>
-
 
     <div class="countdown">
 
@@ -706,9 +953,9 @@ footer{
 </section>
 
 
-<!-- =========================
-     WEDDING TIMELINE
-========================= -->
+<!-- =========================================================
+     EVENTS
+========================================================= -->
 
 <section class="events">
 
@@ -736,7 +983,14 @@ footer{
             <h3>Bride's House</h3>
 
             <p>
-                Tumanyan 49
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Tumanyan+49+Masis+Armenia"
+                    target="_blank"
+                    rel="noopener">
+
+                    Tumanyan 49 · Open in Maps
+
+                </a>
             </p>
 
         </div>
@@ -744,8 +998,8 @@ footer{
         <div class="event-image">
 
             <img
-                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85"
-                alt="Wedding flowers">
+                src="IMG_3947.JPG"
+                alt="Bride's house">
 
         </div>
 
@@ -765,7 +1019,14 @@ footer{
             <h3>Groom's House</h3>
 
             <p>
-                Tumanyan 32
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Tumanyan+32+Masis+Armenia"
+                    target="_blank"
+                    rel="noopener">
+
+                    Tumanyan 32 · Open in Maps
+
+                </a>
             </p>
 
         </div>
@@ -773,8 +1034,8 @@ footer{
         <div class="event-image">
 
             <img
-                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85"
-                alt="Wedding details">
+                src="IMG_3957.JPG"
+                alt="Groom's house">
 
         </div>
 
@@ -794,7 +1055,16 @@ footer{
             <h3>Church Ceremony</h3>
 
             <p>
-                St. Thaddeus Church · Masis
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=St+Grigor+Lusavorich+Church+Masis+Armenia"
+                    target="_blank"
+                    rel="noopener">
+
+                    St. Grigor Lusavorich · Masis · Open in Maps
+
+                </a>
+
             </p>
 
         </div>
@@ -802,8 +1072,8 @@ footer{
         <div class="event-image">
 
             <img
-                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/6b/cf/ce/the-main-entrance-to.jpg?h=1200&s=1&w=1200"
-                alt="St Thaddeus Church, Masis">
+                src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1000&q=85"
+                alt="Church ceremony">
 
         </div>
 
@@ -823,7 +1093,16 @@ footer{
             <h3>Wedding Reception</h3>
 
             <p>
-                Hrashq Aygi
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Adana+Complex+Armenia"
+                    target="_blank"
+                    rel="noopener">
+
+                    Adana Complex · Open in Maps
+
+                </a>
+
             </p>
 
         </div>
@@ -832,7 +1111,7 @@ footer{
 
             <img
                 src="https://www.venue.am/venues/uploads/v-03b34360024b-1784362120555.png"
-                alt="Hrashq Aygi wedding venue">
+                alt="Adana Complex">
 
         </div>
 
@@ -841,9 +1120,9 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      LOCATIONS
-========================= -->
+========================================================= -->
 
 <section class="locations">
 
@@ -861,20 +1140,27 @@ footer{
     <div class="location-grid">
 
 
-        <!-- CHURCH -->
-
         <div class="location-card">
 
             <img
-                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/6b/cf/ce/the-main-entrance-to.jpg?h=1200&s=1&w=1200"
-                alt="Saint Thaddeus Church">
+                src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1200&q=85"
+                alt="St Grigor Lusavorich Church">
 
             <div class="location-content">
 
-                <h3>St. Thaddeus Church</h3>
+                <h3>St. Grigor Lusavorich</h3>
 
                 <p>
-                    Masis, Armenia
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=St+Grigor+Lusavorich+Church+Masis+Armenia"
+                        target="_blank"
+                        rel="noopener">
+
+                        Masis, Armenia · View Map
+
+                    </a>
+
                 </p>
 
             </div>
@@ -882,20 +1168,27 @@ footer{
         </div>
 
 
-        <!-- RESTAURANT -->
-
         <div class="location-card">
 
             <img
                 src="https://www.venue.am/venues/uploads/v-03b34360024b-1784362120555.png"
-                alt="Hrashq Aygi">
+                alt="Adana Complex">
 
             <div class="location-content">
 
-                <h3>Hrashq Aygi</h3>
+                <h3>Adana Complex</h3>
 
                 <p>
-                    Mkhchyan · Ararat Province
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=Adana+Complex+Armenia"
+                        target="_blank"
+                        rel="noopener">
+
+                        View location on Google Maps
+
+                    </a>
+
                 </p>
 
             </div>
@@ -907,9 +1200,9 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      DRESS CODE
-========================= -->
+========================================================= -->
 
 <section class="dress">
 
@@ -922,7 +1215,6 @@ footer{
     <div class="dress-subtitle">
         We would love to see you in our wedding palette.
     </div>
-
 
     <div class="colors">
 
@@ -956,9 +1248,9 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      RSVP
-========================= -->
+========================================================= -->
 
 <section class="rsvp">
 
@@ -973,39 +1265,54 @@ footer{
     </p>
 
 
-    <form class="rsvp-form"
-          onsubmit="submitRSVP(event)">
+    <form
+        class="rsvp-form"
+        id="rsvpForm"
+        onsubmit="submitRSVP(event)">
+
+
+        <label class="form-label">
+            Your Name
+        </label>
 
         <input
+            id="guestName"
             type="text"
-            placeholder="Your name"
+            placeholder="Enter your name"
             required>
 
-        <input
-            type="email"
-            placeholder="Your email"
-            required>
 
-        <select required>
+        <label class="form-label">
+            Will you attend?
+        </label>
+
+        <select
+            id="attendance"
+            required>
 
             <option value="">
-                Will you attend?
+                Please choose
             </option>
 
-            <option>
+            <option value="Yes">
                 Yes, with pleasure
             </option>
 
-            <option>
+            <option value="No">
                 Unfortunately, I can't attend
             </option>
 
         </select>
 
-        <select>
+
+        <label class="form-label">
+            Number of Guests
+        </label>
+
+        <select id="guestCount">
 
             <option value="">
-                Number of guests
+                Select number
             </option>
 
             <option>1</option>
@@ -1015,7 +1322,58 @@ footer{
 
         </select>
 
+
+        <!-- BRIDE / GROOM SIDE -->
+
+        <div class="side-question">
+
+            <label class="form-label">
+                From whose side are you coming?
+            </label>
+
+            <div class="side-options">
+
+                <div class="side-option">
+
+                    <input
+                        type="radio"
+                        id="brideSide"
+                        name="side"
+                        value="Bride's side"
+                        required>
+
+                    <label for="brideSide">
+                        Bride's Side
+                    </label>
+
+                </div>
+
+
+                <div class="side-option">
+
+                    <input
+                        type="radio"
+                        id="groomSide"
+                        name="side"
+                        value="Groom's side">
+
+                    <label for="groomSide">
+                        Groom's Side
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <label class="form-label">
+            Message
+        </label>
+
         <textarea
+            id="message"
             placeholder="Leave us a little message..."></textarea>
 
 
@@ -1027,14 +1385,65 @@ footer{
 
         </button>
 
+        <div class="form-note">
+
+            Your response will be prepared for submission
+            once the RSVP form is connected to your chosen
+            receiving service.
+
+        </div>
+
     </form>
 
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
+     FINAL PHOTO GALLERY
+========================================================= -->
+
+<section class="gallery">
+
+    <div class="gallery-title">
+
+        <div class="section-label">
+            A Little More Of Us
+        </div>
+
+        <h2>Our Story</h2>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+
+        <div class="gallery-item">
+
+            <img
+                src="images.jpeg"
+                alt="Alen and Mane">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="1508339393831241403.jpg"
+                alt="Alen and Mane">
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
      FINAL MESSAGE
-========================= -->
+========================================================= -->
 
 <section class="final">
 
@@ -1065,9 +1474,9 @@ footer{
 
 <script>
 
-/* =========================
+/* =========================================================
    COUNTDOWN
-========================= */
+========================================================= */
 
 const weddingDate =
     new Date("August 28, 2028 15:30:00").getTime();
@@ -1128,17 +1537,134 @@ updateCountdown();
 setInterval(updateCountdown,1000);
 
 
-/* =========================
+/* =========================================================
+   MUSIC
+========================================================= */
+
+const music =
+    document.getElementById("weddingMusic");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+const volumeControl =
+    document.getElementById("volumeControl");
+
+music.volume = 0.7;
+
+
+/* Try autoplay */
+
+window.addEventListener("load", function(){
+
+    music.play()
+        .then(() => {
+
+            musicButton.innerHTML = "Ⅱ";
+
+        })
+        .catch(() => {
+
+            /*
+             Browser blocked autoplay.
+             User can press the music button.
+            */
+
+            musicButton.innerHTML = "▶";
+
+        });
+
+});
+
+
+/* Play / Pause */
+
+musicButton.addEventListener("click", function(){
+
+    if(music.paused){
+
+        music.play();
+
+        musicButton.innerHTML = "Ⅱ";
+
+    }else{
+
+        music.pause();
+
+        musicButton.innerHTML = "▶";
+
+    }
+
+});
+
+
+/* Volume */
+
+volumeControl.addEventListener("input", function(){
+
+    music.volume = this.value;
+
+});
+
+
+/* =========================================================
    RSVP
-========================= */
+========================================================= */
 
 function submitRSVP(event){
 
     event.preventDefault();
 
+
+    const name =
+        document.getElementById("guestName").value;
+
+    const attendance =
+        document.getElementById("attendance").value;
+
+    const guestCount =
+        document.getElementById("guestCount").value;
+
+    const side =
+        document.querySelector(
+            'input[name="side"]:checked'
+        )?.value || "";
+
+    const message =
+        document.getElementById("message").value;
+
+
+    /*
+       IMPORTANT:
+
+       This currently does NOT send the response
+       to your email or Google Sheets.
+
+       It only demonstrates that the form works.
+
+       Connect the form to a form service/backend
+       to actually receive responses.
+    */
+
+
     alert(
-        "Thank you! Your RSVP has been received. ♡"
+        "Thank you, " + name +
+        "! ♡\n\n" +
+
+        "Attendance: " + attendance +
+        "\n" +
+
+        "Guests: " + (guestCount || "Not specified") +
+        "\n" +
+
+        "Coming from: " + side +
+        "\n\n" +
+
+        "Your response has been prepared."
     );
+
+
+    document.getElementById("rsvpForm").reset();
 
 }
 
@@ -1147,3 +1673,4 @@ function submitRSVP(event){
 
 </body>
 </html>
+```
