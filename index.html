@@ -1,1 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Alen & Mane — Wedding Invitation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --cream:#f8f4ee;
+    --champagne:#d8c4a8;
+    --beige:#e9ded0;
+    --brown:#4c4038;
+    --dark:#302923;
+    --white:#fffdf9;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--cream);
+    color:var(--dark);
+    font-family:'Montserrat',sans-serif;
+    font-weight:300;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+    height:100vh;
+    min-height:650px;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+}
+
+.hero img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(20,15,12,.05) 30%,
+            rgba(20,15,12,.18) 60%,
+            rgba(20,15,12,.72) 100%
+        );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    color:white;
+    text-align:center;
+    padding:60px 20px 70px;
+}
+
+.hero-small{
+    font-size:11px;
+    letter-spacing:6px;
+    text-transform:uppercase;
+    margin-bottom:22px;
+}
+
+.names{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(70px,11vw,145px);
+    font-weight:300;
+    line-height:.8;
+    letter-spacing:-3px;
+}
+
+.names span{
+    font-style:italic;
+    font-size:.65em;
+    margin:0 12px;
+}
+
+.hero-date{
+    margin-top:28px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+    letter-spacing:7px;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    padding:120px 20px 100px;
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+}
+
+.ornament{
+    font-family:'Cormorant Garamond',serif;
+    font-size:35px;
+    color:var(--champagne);
+    margin-bottom:25px;
+}
+
+.section-label{
+    font-size:10px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    color:#9d8b77;
+    margin-bottom:25px;
+}
+
+.intro h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(42px,6vw,70px);
+    font-weight:400;
+    margin-bottom:30px;
+}
+
+.intro p{
+    max-width:650px;
+    margin:auto;
+    font-family:'Cormorant Garamond',serif;
+    font-size:24px;
+    line-height:1.7;
+    color:#62574f;
+}
+
+/* =========================
+   DATE
+========================= */
+
+.date-section{
+    background:#eee5da;
+    padding:90px 20px;
+    text-align:center;
+}
+
+.big-date{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(65px,12vw,150px);
+    font-weight:300;
+    line-height:1;
+}
+
+.date-month{
+    margin-top:15px;
+    font-size:12px;
+    letter-spacing:6px;
+    text-transform:uppercase;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    margin-top:55px;
+    flex-wrap:wrap;
+}
+
+.count-box{
+    min-width:80px;
+}
+
+.count-number{
+    font-family:'Cormorant Garamond',serif;
+    font-size:48px;
+    font-weight:400;
+}
+
+.count-label{
+    font-size:9px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-top:5px;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.events{
+    padding:120px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.events-title{
+    text-align:center;
+    margin-bottom:80px;
+}
+
+.events-title h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:65px;
+    font-weight:400;
+}
+
+.event{
+    display:grid;
+    grid-template-columns:140px 1fr 300px;
+    gap:45px;
+    align-items:center;
+    padding:45px 0;
+    border-bottom:1px solid rgba(100,80,60,.15);
+}
+
+.event-time{
+    font-family:'Cormorant Garamond',serif;
+    font-size:30px;
+}
+
+.event-info h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:35px;
+    font-weight:500;
+    margin-bottom:8px;
+}
+
+.event-info p{
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#8d7d6d;
+}
+
+.event-image{
+    width:100%;
+    height:190px;
+    overflow:hidden;
+}
+
+.event-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .6s ease;
+}
+
+.event:hover .event-image img{
+    transform:scale(1.05);
+}
+
+/* =========================
+   LOCATION GALLERY
+========================= */
+
+.locations{
+    background:#f0e8df;
+    padding:120px 20px;
+}
+
+.locations-title{
+    text-align:center;
+    margin-bottom:65px;
+}
+
+.locations-title h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:65px;
+    font-weight:400;
+}
+
+.location-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.location-card{
+    background:white;
+    overflow:hidden;
+}
+
+.location-card img{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    display:block;
+}
+
+.location-content{
+    padding:28px 30px 35px;
+}
+
+.location-content h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:32px;
+    font-weight:500;
+    margin-bottom:8px;
+}
+
+.location-content p{
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#877666;
+    line-height:1.8;
+}
+
+/* =========================
+   DRESS CODE
+========================= */
+
+.dress{
+    padding:120px 20px;
+    text-align:center;
+}
+
+.dress h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:65px;
+    font-weight:400;
+    margin-bottom:18px;
+}
+
+.dress-subtitle{
+    font-family:'Cormorant Garamond',serif;
+    font-size:21px;
+    color:#74675d;
+    margin-bottom:45px;
+}
+
+.colors{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.color{
+    width:75px;
+    height:75px;
+    border-radius:50%;
+    border:5px solid var(--cream);
+    box-shadow:0 0 0 1px rgba(70,50,40,.15);
+}
+
+.color-name{
+    margin-top:10px;
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+/* =========================
+   RSVP
+========================= */
+
+.rsvp{
+    background:#e8ddd0;
+    padding:120px 20px;
+    text-align:center;
+}
+
+.rsvp h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:70px;
+    font-weight:400;
+    margin-bottom:15px;
+}
+
+.rsvp p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:21px;
+    margin-bottom:45px;
+}
+
+.rsvp-form{
+    max-width:550px;
+    margin:auto;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea{
+    width:100%;
+    border:none;
+    border-bottom:1px solid #a99783;
+    background:transparent;
+    padding:18px 5px;
+    margin-bottom:20px;
+    font-family:'Montserrat',sans-serif;
+    font-size:13px;
+    outline:none;
+}
+
+.rsvp-form textarea{
+    height:100px;
+    resize:none;
+}
+
+.rsvp-button{
+    margin-top:15px;
+    background:#453a32;
+    color:white;
+    border:none;
+    padding:17px 50px;
+    letter-spacing:3px;
+    font-size:10px;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.rsvp-button:hover{
+    background:#8c7965;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+    padding:130px 20px;
+    text-align:center;
+    background:#faf7f2;
+}
+
+.final-small{
+    font-size:10px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    color:#a18e7a;
+    margin-bottom:30px;
+}
+
+.final h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(55px,9vw,105px);
+    font-weight:300;
+}
+
+.final p{
+    max-width:600px;
+    margin:30px auto 0;
+    font-family:'Cormorant Garamond',serif;
+    font-size:24px;
+    line-height:1.6;
+    color:#675b52;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:30px;
+    text-align:center;
+    background:#453a32;
+    color:#ddd1c3;
+    font-size:9px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:750px){
+
+    .hero{
+        height:88vh;
+        min-height:600px;
+    }
+
+    .hero img{
+        object-position:center;
+    }
+
+    .hero-content{
+        padding-bottom:55px;
+    }
+
+    .names{
+        font-size:75px;
+    }
+
+    .names span{
+        display:block;
+        font-size:.45em;
+        margin:12px 0;
+        line-height:.5;
+    }
+
+    .hero-date{
+        font-size:18px;
+        letter-spacing:4px;
+    }
+
+    .intro{
+        padding:85px 25px;
+    }
+
+    .intro h2{
+        font-size:47px;
+    }
+
+    .intro p{
+        font-size:21px;
+    }
+
+    .big-date{
+        font-size:80px;
+    }
+
+    .countdown{
+        gap:25px;
+    }
+
+    .count-number{
+        font-size:38px;
+    }
+
+    .events{
+        padding:85px 20px;
+    }
+
+    .events-title h2,
+    .locations-title h2,
+    .dress h2{
+        font-size:50px;
+    }
+
+    .event{
+        grid-template-columns:1fr;
+        gap:12px;
+        padding:40px 0;
+    }
+
+    .event-time{
+        font-size:24px;
+    }
+
+    .event-info h3{
+        font-size:31px;
+    }
+
+    .event-image{
+        height:240px;
+        margin-top:15px;
+    }
+
+    .location-grid{
+        grid-template-columns:1fr;
+    }
+
+    .location-card img{
+        height:280px;
+    }
+
+    .locations{
+        padding:85px 20px;
+    }
+
+    .dress{
+        padding:90px 20px;
+    }
+
+    .rsvp{
+        padding:90px 25px;
+    }
+
+    .rsvp h2{
+        font-size:55px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <img
+        src="https://cdn.shopify.com/s/files/1/0845/4671/5873/files/IMG_4368.jpg?v=1789571613"
+        alt="Alen and Mane">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            Together with their families
+        </div>
+
+        <div class="names">
+            Alen <span>&</span> Mane
+        </div>
+
+        <div class="hero-date">
+            28 · 08 · 2028
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+    <div class="ornament">♡</div>
+
+    <div class="section-label">
+        Our Wedding Day
+    </div>
+
+    <h2>Dear Guests,</h2>
+
+    <p>
+        We would be delighted if you shared one of the most
+        moving and important moments of our lives with us —
+        <em>our wedding day.</em>
+    </p>
+
+</section>
+
+
+<!-- =========================
+     DATE
+========================= -->
+
+<section class="date-section">
+
+    <div class="section-label">
+        Save the Date
+    </div>
+
+    <div class="big-date">
+        28.08.2028
+    </div>
+
+    <div class="date-month">
+        Tuesday · August · 2028
+    </div>
+
+
+    <div class="countdown">
+
+        <div class="count-box">
+            <div class="count-number" id="days">000</div>
+            <div class="count-label">Days</div>
+        </div>
+
+        <div class="count-box">
+            <div class="count-number" id="hours">00</div>
+            <div class="count-label">Hours</div>
+        </div>
+
+        <div class="count-box">
+            <div class="count-number" id="minutes">00</div>
+            <div class="count-label">Minutes</div>
+        </div>
+
+        <div class="count-box">
+            <div class="count-number" id="seconds">00</div>
+            <div class="count-label">Seconds</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     WEDDING TIMELINE
+========================= -->
+
+<section class="events">
+
+    <div class="events-title">
+
+        <div class="section-label">
+            The Day
+        </div>
+
+        <h2>Our Celebration</h2>
+
+    </div>
+
+
+    <!-- BRIDE -->
+
+    <div class="event">
+
+        <div class="event-time">
+            11:00
+        </div>
+
+        <div class="event-info">
+
+            <h3>Bride's House</h3>
+
+            <p>
+                Tumanyan 49
+            </p>
+
+        </div>
+
+        <div class="event-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85"
+                alt="Wedding flowers">
+
+        </div>
+
+    </div>
+
+
+    <!-- GROOM -->
+
+    <div class="event">
+
+        <div class="event-time">
+            13:00
+        </div>
+
+        <div class="event-info">
+
+            <h3>Groom's House</h3>
+
+            <p>
+                Tumanyan 32
+            </p>
+
+        </div>
+
+        <div class="event-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85"
+                alt="Wedding details">
+
+        </div>
+
+    </div>
+
+
+    <!-- CHURCH -->
+
+    <div class="event">
+
+        <div class="event-time">
+            15:30
+        </div>
+
+        <div class="event-info">
+
+            <h3>Church Ceremony</h3>
+
+            <p>
+                St. Thaddeus Church · Masis
+            </p>
+
+        </div>
+
+        <div class="event-image">
+
+            <img
+                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/6b/cf/ce/the-main-entrance-to.jpg?h=1200&s=1&w=1200"
+                alt="St Thaddeus Church, Masis">
+
+        </div>
+
+    </div>
+
+
+    <!-- RESTAURANT -->
+
+    <div class="event">
+
+        <div class="event-time">
+            18:00
+        </div>
+
+        <div class="event-info">
+
+            <h3>Wedding Reception</h3>
+
+            <p>
+                Hrashq Aygi
+            </p>
+
+        </div>
+
+        <div class="event-image">
+
+            <img
+                src="https://www.venue.am/venues/uploads/v-03b34360024b-1784362120555.png"
+                alt="Hrashq Aygi wedding venue">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LOCATIONS
+========================= -->
+
+<section class="locations">
+
+    <div class="locations-title">
+
+        <div class="section-label">
+            Where We Meet
+        </div>
+
+        <h2>Our Locations</h2>
+
+    </div>
+
+
+    <div class="location-grid">
+
+
+        <!-- CHURCH -->
+
+        <div class="location-card">
+
+            <img
+                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/6b/cf/ce/the-main-entrance-to.jpg?h=1200&s=1&w=1200"
+                alt="Saint Thaddeus Church">
+
+            <div class="location-content">
+
+                <h3>St. Thaddeus Church</h3>
+
+                <p>
+                    Masis, Armenia
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESTAURANT -->
+
+        <div class="location-card">
+
+            <img
+                src="https://www.venue.am/venues/uploads/v-03b34360024b-1784362120555.png"
+                alt="Hrashq Aygi">
+
+            <div class="location-content">
+
+                <h3>Hrashq Aygi</h3>
+
+                <p>
+                    Mkhchyan · Ararat Province
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     DRESS CODE
+========================= -->
+
+<section class="dress">
+
+    <div class="section-label">
+        Dress Code
+    </div>
+
+    <h2>Soft & Elegant</h2>
+
+    <div class="dress-subtitle">
+        We would love to see you in our wedding palette.
+    </div>
+
+
+    <div class="colors">
+
+        <div>
+            <div class="color" style="background:#F4E9DC;"></div>
+            <div class="color-name">Ivory</div>
+        </div>
+
+        <div>
+            <div class="color" style="background:#DCC8B4;"></div>
+            <div class="color-name">Champagne</div>
+        </div>
+
+        <div>
+            <div class="color" style="background:#B89B82;"></div>
+            <div class="color-name">Taupe</div>
+        </div>
+
+        <div>
+            <div class="color" style="background:#A9867B;"></div>
+            <div class="color-name">Dusty Rose</div>
+        </div>
+
+        <div>
+            <div class="color" style="background:#6F6259;"></div>
+            <div class="color-name">Mocha</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     RSVP
+========================= -->
+
+<section class="rsvp">
+
+    <div class="section-label">
+        Kindly Respond
+    </div>
+
+    <h2>Will You Join Us?</h2>
+
+    <p>
+        Your presence would mean the world to us.
+    </p>
+
+
+    <form class="rsvp-form"
+          onsubmit="submitRSVP(event)">
+
+        <input
+            type="text"
+            placeholder="Your name"
+            required>
+
+        <input
+            type="email"
+            placeholder="Your email"
+            required>
+
+        <select required>
+
+            <option value="">
+                Will you attend?
+            </option>
+
+            <option>
+                Yes, with pleasure
+            </option>
+
+            <option>
+                Unfortunately, I can't attend
+            </option>
+
+        </select>
+
+        <select>
+
+            <option value="">
+                Number of guests
+            </option>
+
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+
+        </select>
+
+        <textarea
+            placeholder="Leave us a little message..."></textarea>
+
+
+        <button
+            class="rsvp-button"
+            type="submit">
+
+            Send RSVP
+
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- =========================
+     FINAL MESSAGE
+========================= -->
+
+<section class="final">
+
+    <div class="final-small">
+        With all our love
+    </div>
+
+    <h2>Alen & Mane</h2>
+
+    <p>
+        Thank you for sharing the most precious moment
+        of our lives with us.
+    </p>
+
+    <div class="ornament" style="margin-top:35px;">
+        ♡
+    </div>
+
+</section>
+
+
+<footer>
+
+    28 · 08 · 2028 &nbsp; | &nbsp; ALEN & MANE
+
+</footer>
+
+
+<script>
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+const weddingDate =
+    new Date("August 28, 2028 15:30:00").getTime();
+
+function updateCountdown(){
+
+    const now = new Date().getTime();
+
+    const distance = weddingDate - now;
+
+    if(distance <= 0){
+
+        document.getElementById("days").innerHTML = "000";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
+
+        return;
+    }
+
+    const days =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours =
+        Math.floor(
+            (distance % (1000 * 60 * 60 * 24))
+            / (1000 * 60 * 60)
+        );
+
+    const minutes =
+        Math.floor(
+            (distance % (1000 * 60 * 60))
+            / (1000 * 60)
+        );
+
+    const seconds =
+        Math.floor(
+            (distance % (1000 * 60))
+            / 1000
+        );
+
+
+    document.getElementById("days").innerHTML =
+        String(days).padStart(3,"0");
+
+    document.getElementById("hours").innerHTML =
+        String(hours).padStart(2,"0");
+
+    document.getElementById("minutes").innerHTML =
+        String(minutes).padStart(2,"0");
+
+    document.getElementById("seconds").innerHTML =
+        String(seconds).padStart(2,"0");
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+
+/* =========================
+   RSVP
+========================= */
+
+function submitRSVP(event){
+
+    event.preventDefault();
+
+    alert(
+        "Thank you! Your RSVP has been received. ♡"
+    );
+
+}
+
+</script>
+
+
+</body>
+</html>
