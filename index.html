@@ -57,23 +57,37 @@ textarea{
    MUSIC
 ========================= */
 
+#weddingMusic{
+    display:none;
+}
+
 .music-control{
     position:fixed;
     right:25px;
     bottom:25px;
+
     width:45px;
     height:45px;
+
     border:1px solid rgba(70,60,50,.35);
     border-radius:50%;
+
     background:rgba(255,253,249,.88);
+
     backdrop-filter:blur(10px);
+
     z-index:9999;
+
     cursor:pointer;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     font-size:15px;
+
     color:var(--dark);
+
     transition:.3s ease;
 }
 
@@ -90,16 +104,26 @@ textarea{
 
 .language-selector{
     position:fixed;
+
     right:82px;
     bottom:37px;
+
     z-index:9999;
+
     background:rgba(255,253,249,.88);
+
     backdrop-filter:blur(10px);
+
     border:1px solid rgba(70,60,50,.25);
+
     padding:9px 14px;
+
     border-radius:30px;
+
     font-size:10px;
+
     letter-spacing:2px;
+
     color:var(--dark);
 }
 
@@ -129,6 +153,7 @@ textarea{
 
 .hero{
     min-height:100vh;
+
     position:relative;
 
     background-image:
@@ -147,11 +172,13 @@ textarea{
     justify-content:center;
 
     text-align:center;
+
     color:white;
 }
 
 .hero::after{
     content:"";
+
     position:absolute;
     inset:0;
 
@@ -166,47 +193,65 @@ textarea{
 .hero-content{
     position:relative;
     z-index:2;
+
     padding:30px;
 }
 
 .hero-small{
     font-size:11px;
     letter-spacing:6px;
+
     text-transform:uppercase;
+
     margin-bottom:28px;
 }
 
 .hero-names{
     font-family:'Cormorant Garamond',serif;
+
     font-size:clamp(70px,12vw,145px);
+
     font-weight:300;
+
     line-height:.8;
+
     letter-spacing:-4px;
 }
 
 .hero-date{
     margin-top:34px;
+
     font-size:13px;
+
     letter-spacing:7px;
 }
 
 .hero-line{
     width:70px;
     height:1px;
+
     background:white;
+
     margin:28px auto;
+
     opacity:.7;
 }
 
 .hero-bottom{
     position:absolute;
+
     z-index:3;
+
     bottom:35px;
+
     left:50%;
+
     transform:translateX(-50%);
 
     font-size:9px;
+
     letter-spacing:4px;
+
     text-transform:uppercase;
 }
 
@@ -221,28 +266,39 @@ section{
 
 .section-label{
     text-align:center;
+
     font-size:10px;
+
     letter-spacing:5px;
+
     text-transform:uppercase;
+
     color:#8b7a6b;
+
     margin-bottom:18px;
 }
 
 .section-title{
     text-align:center;
+
     font-family:'Cormorant Garamond',serif;
+
     font-size:64px;
+
     font-weight:300;
+
     line-height:1;
 }
 
 .section-description{
     max-width:650px;
+
     margin:30px auto 0;
 
     text-align:center;
 
     line-height:2;
+
     font-size:13px;
 
     color:#766c63;
@@ -271,15 +327,21 @@ section{
 
 .intro-ornament{
     font-family:'Cormorant Garamond',serif;
+
     font-size:34px;
+
     color:#9d8976;
+
     margin-bottom:30px;
 }
 
 .intro-text{
     font-family:'Cormorant Garamond',serif;
+
     font-size:32px;
+
     line-height:1.55;
+
     color:#51483f;
 }
 
@@ -290,23 +352,28 @@ section{
 
 .countdown-section{
     background:#fffdf9;
+
     padding-top:90px;
     padding-bottom:90px;
 }
 
 .countdown{
     max-width:900px;
+
     margin:55px auto 0;
 
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
 
     border-top:1px solid #ddd1c5;
+
     border-bottom:1px solid #ddd1c5;
 }
 
 .countdown-item{
     text-align:center;
+
     padding:30px 10px;
 
     border-right:1px solid #ddd1c5;
@@ -318,15 +385,21 @@ section{
 
 .countdown-number{
     font-family:'Cormorant Garamond',serif;
+
     font-size:55px;
+
     font-weight:300;
 }
 
 .countdown-label{
     font-size:9px;
+
     letter-spacing:3px;
+
     text-transform:uppercase;
+
     color:#88786a;
+
     margin-top:5px;
 }
 
@@ -341,11 +414,13 @@ section{
 
 .events{
     max-width:1050px;
+
     margin:75px auto 0;
 }
 
 .event{
     display:grid;
+
     grid-template-columns:180px 1fr;
 
     border-top:1px solid #d8cbbf;
@@ -361,7 +436,9 @@ section{
 
 .event-time{
     font-family:'Cormorant Garamond',serif;
+
     font-size:36px;
+
     color:#7b6b5d;
 }
 
@@ -371,20 +448,27 @@ section{
 
 .event-number{
     font-size:9px;
+
     letter-spacing:3px;
+
     color:#a18e7c;
+
     margin-bottom:10px;
 }
 
 .event-title{
     font-family:'Cormorant Garamond',serif;
+
     font-size:39px;
+
     font-weight:400;
 }
 
 .event-address{
     margin-top:8px;
+
     color:#81756b;
+
     font-size:12px;
 }
 
@@ -398,7 +482,9 @@ section{
     text-decoration:none;
 
     font-size:9px;
+
     letter-spacing:2px;
+
     text-transform:uppercase;
 
     border-bottom:1px solid #9e9185;
@@ -415,35 +501,32 @@ section{
     margin-top:30px;
 
     width:100%;
+
     height:370px;
 
     display:block;
 
     object-fit:cover;
-
-    object-position:center;
 }
 
 
-/* Church */
+/* CHURCH */
 
 .event:nth-child(3) .event-photo{
     object-position:center center;
 }
 
 
-/* Adana Complex */
+/* RESTAURANT
+   SHOW BOTTOM PART
+*/
 
 .event:nth-child(4) .event-photo{
+    height:420px;
+
     object-fit:cover;
 
-    /*
-       This keeps the photo filling
-       the whole area instead of becoming tiny.
-    */
-    object-position:center center;
-
-    height:420px;
+    object-position:center bottom;
 }
 
 
@@ -466,7 +549,9 @@ section{
     width:100%;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     gap:20px;
@@ -479,6 +564,7 @@ section{
     content:"";
 
     width:90px;
+
     height:1px;
 
     background:#d5c8bb;
@@ -486,6 +572,7 @@ section{
 
 .divider-symbol{
     color:#a38e7a;
+
     font-size:18px;
 }
 
@@ -500,12 +587,15 @@ section{
 
 .dress-content{
     max-width:850px;
+
     margin:60px auto 0;
+
     text-align:center;
 }
 
 .dress-title{
     font-family:'Cormorant Garamond',serif;
+
     font-size:38px;
 }
 
@@ -515,6 +605,7 @@ section{
     max-width:600px;
 
     font-size:13px;
+
     line-height:1.9;
 
     color:#766c63;
@@ -522,8 +613,11 @@ section{
 
 .swatches{
     display:flex;
+
     justify-content:center;
+
     gap:15px;
+
     flex-wrap:wrap;
 }
 
@@ -538,6 +632,7 @@ section{
 
 .swatch-label{
     font-size:8px;
+
     letter-spacing:1px;
 
     margin-top:9px;
@@ -579,7 +674,9 @@ section{
     display:block;
 
     font-size:9px;
+
     letter-spacing:2px;
+
     text-transform:uppercase;
 
     margin-bottom:9px;
@@ -588,11 +685,11 @@ section{
 }
 
 .form-group input,
-.form-group select,
-.form-group textarea{
+.form-group select{
     width:100%;
 
     border:0;
+
     border-bottom:1px solid #cfc0b2;
 
     background:transparent;
@@ -606,14 +703,63 @@ section{
     color:#332e29;
 }
 
+
+/* MESSAGE
+   BIGGER AND DARKER
+*/
+
 .form-group textarea{
-    min-height:90px;
+
+    width:100%;
+
+    min-height:125px;
+
     resize:vertical;
+
+    border:1px solid #cfc0b2;
+
+    background:rgba(255,255,255,.28);
+
+    padding:15px;
+
+    outline:none;
+
+    font-size:17px;
+
+    line-height:1.65;
+
+    color:#292521;
+
+    border-radius:2px;
+
 }
+
+.form-group textarea:focus{
+
+    border-color:#8d7c6d;
+
+    background:rgba(255,255,255,.55);
+
+}
+
+.form-group textarea::placeholder{
+
+    color:#8a7d71;
+
+    opacity:1;
+
+    font-size:14px;
+
+}
+
+
+/* RADIO */
 
 .radio-row{
     display:flex;
+
     gap:25px;
+
     flex-wrap:wrap;
 }
 
@@ -638,9 +784,10 @@ section{
 }
 
 
-/* SEND BUTTON */
+/* SEND */
 
 .rsvp-button{
+
     width:100%;
 
     padding:17px;
@@ -663,16 +810,22 @@ section{
 }
 
 .rsvp-button:hover{
+
     background:transparent;
+
     color:#332e29;
+
 }
 
 .rsvp-button:disabled{
+
     opacity:.5;
+
     cursor:wait;
 }
 
 .rsvp-success{
+
     display:none;
 
     text-align:center;
@@ -686,32 +839,34 @@ section{
 
 
 /* =========================
-   CLOSING PHOTO
+   FINAL PHOTO
+   SHOW UPPER PART
 ========================= */
 
 .closing{
+
     min-height:75vh;
 
     background:
         linear-gradient(
-            rgba(38,30,25,.15),
-            rgba(38,30,25,.35)
+            rgba(38,30,25,.12),
+            rgba(38,30,25,.30)
         ),
         url("IMG_3947.JPG");
 
     background-size:cover;
 
     /*
-       IMPORTANT:
-       This moves the image toward
-       the bottom of the original photo
-       so the heads are visible.
+       TOP OF IMAGE
+       instead of the feet
     */
-    background-position:center bottom;
+
+    background-position:center top;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     color:white;
@@ -720,19 +875,25 @@ section{
 }
 
 .closing-inner{
+
     max-width:700px;
+
     padding:30px;
 }
 
 .closing-small{
+
     font-size:10px;
+
     letter-spacing:5px;
+
     text-transform:uppercase;
 
     margin-bottom:25px;
 }
 
 .closing-title{
+
     font-family:'Cormorant Garamond',serif;
 
     font-size:70px;
@@ -741,6 +902,7 @@ section{
 }
 
 .closing-text{
+
     font-family:'Cormorant Garamond',serif;
 
     font-size:25px;
@@ -756,6 +918,7 @@ section{
 ========================= */
 
 footer{
+
     background:#e5d8ca;
 
     text-align:center;
@@ -764,12 +927,16 @@ footer{
 }
 
 .footer-names{
+
     font-family:'Cormorant Garamond',serif;
+
     font-size:42px;
 }
 
 .footer-date{
+
     font-size:9px;
+
     letter-spacing:4px;
 
     margin-top:12px;
@@ -788,100 +955,161 @@ footer{
         padding:80px 6vw;
     }
 
+
     .hero{
+
         min-height:100svh;
+
         background-position:center;
     }
 
+
     .hero-small{
+
         font-size:8px;
+
         letter-spacing:4px;
     }
 
+
     .hero-names{
+
         font-size:76px;
+
         letter-spacing:-2px;
     }
 
+
     .hero-date{
+
         font-size:10px;
+
         letter-spacing:4px;
     }
 
+
     .section-title{
+
         font-size:49px;
     }
 
+
     .intro-text{
+
         font-size:25px;
     }
 
+
     .countdown{
+
         grid-template-columns:repeat(2,1fr);
     }
 
+
     .countdown-item:nth-child(2){
+
         border-right:0;
     }
 
+
     .countdown-item:nth-child(-n+2){
+
         border-bottom:1px solid #ddd1c5;
     }
 
+
     .event{
+
         grid-template-columns:1fr;
+
         padding:35px 0;
     }
 
+
     .event-time{
+
         font-size:30px;
+
         margin-bottom:15px;
     }
 
+
     .event-content{
+
         padding-left:0;
     }
 
+
     .event-title{
+
         font-size:34px;
     }
 
+
     .event-photo{
+
         height:280px;
     }
 
-    /* Adana photo on mobile */
+
+    /* RESTAURANT MOBILE */
 
     .event:nth-child(4) .event-photo{
+
         height:320px;
+
         object-fit:cover;
-        object-position:center center;
+
+        object-position:center bottom;
     }
 
+
+    /* MESSAGE MOBILE */
+
+    .form-group textarea{
+
+        min-height:140px;
+
+        font-size:17px;
+
+        line-height:1.65;
+
+        padding:15px;
+    }
+
+
     .rsvp-box{
+
         padding:30px 22px;
     }
 
+
+    /* FINAL PHOTO MOBILE */
+
     .closing{
+
         min-height:65vh;
 
-        /*
-           Mobile crop also keeps
-           the lower part of the photo.
-        */
-        background-position:center bottom;
+        background-position:center top;
     }
 
+
     .closing-title{
+
         font-size:57px;
     }
 
+
     .closing-text{
+
         font-size:21px;
     }
 
+
     .language-selector{
+
         right:20px;
+
         bottom:82px;
 
         font-size:9px;
@@ -889,11 +1117,15 @@ footer{
         padding:8px 12px;
     }
 
+
     .music-control{
+
         right:20px;
+
         bottom:25px;
 
         width:43px;
+
         height:43px;
     }
 
@@ -907,18 +1139,25 @@ footer{
 @media(max-width:390px){
 
     .hero-names{
+
         font-size:65px;
     }
 
+
     .section-title{
+
         font-size:43px;
     }
 
+
     .event-title{
+
         font-size:31px;
     }
 
+
     .closing-title{
+
         font-size:50px;
     }
 
@@ -926,6 +1165,7 @@ footer{
 
 </style>
 </head>
+
 
 <body>
 
@@ -936,7 +1176,9 @@ footer{
 
 <audio
     id="weddingMusic"
+    autoplay
     loop
+    playsinline
     preload="auto">
 
     <source
@@ -949,9 +1191,9 @@ footer{
 <button
     class="music-control"
     id="musicButton"
-    aria-label="Music">
+    aria-label="Pause music">
 
-    ♫
+    Ⅱ
 
 </button>
 
@@ -1054,7 +1296,9 @@ footer{
     <div class="intro-inner">
 
         <div class="intro-ornament">
+
             ✦
+
         </div>
 
 
@@ -1089,6 +1333,7 @@ footer{
 ========================= -->
 
 <section class="countdown-section">
+
 
     <div
         class="section-label"
@@ -1255,7 +1500,7 @@ footer{
     <div class="events">
 
 
-        <!-- 01 BRIDE -->
+        <!-- BRIDE -->
 
         <div class="event">
 
@@ -1283,7 +1528,9 @@ footer{
 
 
                 <div class="event-address">
+
                     Tumanyan 49
+
                 </div>
 
 
@@ -1304,7 +1551,7 @@ footer{
         </div>
 
 
-        <!-- 02 GROOM -->
+        <!-- GROOM -->
 
         <div class="event">
 
@@ -1332,7 +1579,9 @@ footer{
 
 
                 <div class="event-address">
+
                     Tumanyan 32
+
                 </div>
 
 
@@ -1353,7 +1602,7 @@ footer{
         </div>
 
 
-        <!-- 03 CHURCH -->
+        <!-- CHURCH -->
 
         <div class="event">
 
@@ -1425,7 +1674,7 @@ footer{
         </div>
 
 
-        <!-- 04 ADANA -->
+        <!-- RESTAURANT -->
 
         <div class="event">
 
@@ -1573,6 +1822,7 @@ footer{
 
 
             <div>
+
                 <div
                     class="swatch"
                     style="background:#e7ddd2">
@@ -1581,10 +1831,12 @@ footer{
                 <div class="swatch-label">
                     Champagne
                 </div>
+
             </div>
 
 
             <div>
+
                 <div
                     class="swatch"
                     style="background:#cdb9a5">
@@ -1593,10 +1845,12 @@ footer{
                 <div class="swatch-label">
                     Taupe
                 </div>
+
             </div>
 
 
             <div>
+
                 <div
                     class="swatch"
                     style="background:#9b8778">
@@ -1605,10 +1859,12 @@ footer{
                 <div class="swatch-label">
                     Mocha
                 </div>
+
             </div>
 
 
             <div>
+
                 <div
                     class="swatch"
                     style="background:#e4c9c2">
@@ -1617,10 +1873,12 @@ footer{
                 <div class="swatch-label">
                     Rose
                 </div>
+
             </div>
 
 
             <div>
+
                 <div
                     class="swatch"
                     style="background:#bbb8ae">
@@ -1629,10 +1887,12 @@ footer{
                 <div class="swatch-label">
                     Sage
                 </div>
+
             </div>
 
 
             <div>
+
                 <div
                     class="swatch"
                     style="background:#4b4541">
@@ -1641,6 +1901,7 @@ footer{
                 <div class="swatch-label">
                     Charcoal
                 </div>
+
             </div>
 
 
@@ -1698,8 +1959,7 @@ footer{
             id="rsvpForm"
             action="https://script.google.com/macros/s/AKfycbzgWnlqmWyHUPEQQ19V8yvukmt3MZGrp6r8Nz4BEzGqSTUWfDc-EotY4sBae3xotarO/exec"
             method="POST"
-            target="rsvpFrame"
-        >
+            target="rsvpFrame">
 
 
             <div class="form-group">
@@ -1811,6 +2071,7 @@ footer{
 
                 <div class="radio-row">
 
+
                     <label>
 
                         <input
@@ -1835,6 +2096,7 @@ footer{
 
                     </label>
 
+
                 </div>
 
             </div>
@@ -1854,13 +2116,10 @@ footer{
 
                 <textarea
                     name="message"
-                    placeholder="Write something...">
-                </textarea>
+                    placeholder="Write something..."></textarea>
 
             </div>
 
-
-            <!-- ONLY SEND -->
 
             <button
                 type="submit"
@@ -1961,6 +2220,7 @@ footer{
         Alen & Mane
     </div>
 
+
     <div class="footer-date">
         28 · 08 · 2028
     </div>
@@ -1970,10 +2230,9 @@ footer{
 
 <script>
 
-
-/* =========================
+/* =====================================================
    MUSIC
-========================= */
+===================================================== */
 
 const music =
     document.getElementById("weddingMusic");
@@ -1981,65 +2240,90 @@ const music =
 const musicButton =
     document.getElementById("musicButton");
 
+
 let musicPlaying = false;
 
 
-function updateMusicButton(){
+/* Try to start immediately */
 
-    musicButton.innerHTML =
-        musicPlaying ? "Ⅱ" : "♫";
+function playWeddingMusic(){
 
-}
+    music.volume = 1;
 
+    const promise = music.play();
 
-function startMusic(){
+    if(promise !== undefined){
 
-    music.play()
-    .then(() => {
+        promise
+        .then(() => {
 
-        musicPlaying = true;
+            musicPlaying = true;
 
-        updateMusicButton();
+            musicButton.innerHTML = "Ⅱ";
 
-    })
-    .catch(() => {
+        })
+        .catch(() => {
 
-        musicPlaying = false;
+            /*
+             Browser autoplay policy may block
+             audio with sound.
+            */
 
-        updateMusicButton();
+            musicPlaying = false;
 
-    });
+            musicButton.innerHTML = "♫";
 
-}
-
-
-window.addEventListener(
-    "load",
-    startMusic
-);
-
-
-function resumeMusic(){
-
-    if(!musicPlaying){
-
-        startMusic();
+        });
 
     }
 
 }
 
 
-document.addEventListener(
-    "click",
-    resumeMusic
+/* Try immediately */
+
+playWeddingMusic();
+
+
+/*
+   Try again as soon as the page becomes
+   fully loaded.
+*/
+
+window.addEventListener(
+    "load",
+    function(){
+
+        playWeddingMusic();
+
+    }
 );
 
+
+/*
+   If autoplay is permitted after the page
+   becomes visible, try once more.
+*/
+
 document.addEventListener(
-    "touchstart",
-    resumeMusic
+    "visibilitychange",
+    function(){
+
+        if(
+            document.visibilityState === "visible"
+            &&
+            music.paused
+        ){
+
+            playWeddingMusic();
+
+        }
+
+    }
 );
 
+
+/* Music button */
 
 musicButton.addEventListener(
     "click",
@@ -2055,7 +2339,7 @@ musicButton.addEventListener(
 
                 musicPlaying = true;
 
-                updateMusicButton();
+                musicButton.innerHTML = "Ⅱ";
 
             });
 
@@ -2065,7 +2349,7 @@ musicButton.addEventListener(
 
             musicPlaying = false;
 
-            updateMusicButton();
+            musicButton.innerHTML = "♫";
 
         }
 
@@ -2073,9 +2357,9 @@ musicButton.addEventListener(
 );
 
 
-/* =========================
+/* =====================================================
    COUNTDOWN
-========================= */
+===================================================== */
 
 const weddingDate =
     new Date(
@@ -2094,10 +2378,17 @@ function updateCountdown(){
 
     if(distance <= 0){
 
-        document.getElementById("days").innerHTML = "00";
-        document.getElementById("hours").innerHTML = "00";
-        document.getElementById("minutes").innerHTML = "00";
-        document.getElementById("seconds").innerHTML = "00";
+        document.getElementById("days").innerHTML =
+            "00";
+
+        document.getElementById("hours").innerHTML =
+            "00";
+
+        document.getElementById("minutes").innerHTML =
+            "00";
+
+        document.getElementById("seconds").innerHTML =
+            "00";
 
         return;
 
@@ -2113,8 +2404,10 @@ function updateCountdown(){
 
     const hours =
         Math.floor(
-            (distance %
-            (1000 * 60 * 60 * 24))
+            (
+                distance %
+                (1000 * 60 * 60 * 24)
+            )
             /
             (1000 * 60 * 60)
         );
@@ -2122,8 +2415,10 @@ function updateCountdown(){
 
     const minutes =
         Math.floor(
-            (distance %
-            (1000 * 60 * 60))
+            (
+                distance %
+                (1000 * 60 * 60)
+            )
             /
             (1000 * 60)
         );
@@ -2131,8 +2426,10 @@ function updateCountdown(){
 
     const seconds =
         Math.floor(
-            (distance %
-            (1000 * 60))
+            (
+                distance %
+                (1000 * 60)
+            )
             /
             1000
         );
@@ -2164,9 +2461,9 @@ setInterval(
 );
 
 
-/* =========================
+/* =====================================================
    LANGUAGE
-========================= */
+===================================================== */
 
 let currentLanguage =
     localStorage.getItem(
@@ -2251,9 +2548,9 @@ changeLanguage(
 );
 
 
-/* =========================
+/* =====================================================
    RSVP
-========================= */
+===================================================== */
 
 const rsvpForm =
     document.getElementById(
@@ -2285,6 +2582,10 @@ rsvpForm.addEventListener(
 
         rsvpButton.disabled = true;
 
+        /*
+           Keep the button text simply SEND
+        */
+
         rsvpButton.innerHTML =
             "SEND";
 
@@ -2304,7 +2605,7 @@ rsvpFrame.addEventListener(
 
 
         setTimeout(
-            () => {
+            function(){
 
                 rsvpForm.style.display =
                     "none";
