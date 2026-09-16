@@ -1,7 +1,8 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,7 +13,12 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
+
 <style>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
 
 :root{
     --cream:#f8f4ee;
@@ -22,6 +28,11 @@
     --dark:#302923;
     --white:#fffdf9;
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
     box-sizing:border-box;
@@ -41,52 +52,89 @@ body{
     overflow-x:hidden;
 }
 
+
 /* =========================================================
-   MUSIC PLAYER
+   BOTTOM RIGHT CONTROLS
 ========================================================= */
 
-.music-player{
+.page-controls{
     position:fixed;
-    top:22px;
-    right:22px;
+    right:25px;
+    bottom:25px;
     z-index:9999;
+
     display:flex;
     align-items:center;
-    gap:8px;
+    gap:10px;
 }
 
+
+/* MUSIC BUTTON */
+
 .music-btn{
-    width:45px;
-    height:45px;
+    width:48px;
+    height:48px;
+
     border-radius:50%;
-    border:1px solid rgba(255,255,255,.65);
-    background:rgba(45,36,30,.42);
-    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.7);
+
+    background:rgba(50,40,33,.55);
+
+    backdrop-filter:blur(12px);
+
     color:white;
+
     cursor:pointer;
+
     display:flex;
-    justify-content:center;
     align-items:center;
-    font-size:16px;
-    transition:.3s;
+    justify-content:center;
+
+    font-size:15px;
+
+    transition:.35s;
 }
 
 .music-btn:hover{
-    background:rgba(255,255,255,.9);
-    color:#3d332d;
+    background:white;
+    color:var(--brown);
 }
 
-.volume{
-    width:0;
-    opacity:0;
-    transition:.3s;
-    accent-color:white;
+
+/* LANGUAGE */
+
+.language-select{
+    height:48px;
+
+    padding:0 15px;
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,.7);
+
+    background:rgba(50,40,33,.55);
+
+    backdrop-filter:blur(12px);
+
+    color:white;
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:10px;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    outline:none;
 }
 
-.music-player:hover .volume{
-    width:75px;
-    opacity:1;
+.language-select option{
+    background:#453a32;
+    color:white;
 }
+
 
 /* =========================================================
    HERO
@@ -94,113 +142,159 @@ body{
 
 .hero{
     position:relative;
+
     height:100vh;
     min-height:650px;
+
     overflow:hidden;
+
     display:flex;
     align-items:flex-end;
     justify-content:center;
 }
 
-.hero img{
+.hero > img{
     position:absolute;
+
     inset:0;
+
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     object-position:center;
 }
 
 .hero::after{
     content:"";
+
     position:absolute;
+
     inset:0;
+
     background:
         linear-gradient(
             to bottom,
             rgba(20,15,12,.03) 20%,
-            rgba(20,15,12,.18) 60%,
-            rgba(20,15,12,.75) 100%
+            rgba(20,15,12,.18) 55%,
+            rgba(20,15,12,.78) 100%
         );
 }
 
 .hero-content{
     position:relative;
+
     z-index:2;
+
     color:white;
+
     text-align:center;
-    padding:60px 20px 70px;
+
+    padding:60px 20px 75px;
 }
 
 .hero-small{
-    font-size:11px;
+    font-size:10px;
+
     letter-spacing:6px;
+
     text-transform:uppercase;
-    margin-bottom:22px;
+
+    margin-bottom:25px;
 }
 
 .names{
     font-family:'Cormorant Garamond',serif;
+
     font-size:clamp(70px,11vw,145px);
+
     font-weight:300;
+
     line-height:.8;
+
     letter-spacing:-3px;
 }
 
 .names span{
     font-style:italic;
+
     font-size:.65em;
+
     margin:0 12px;
 }
 
 .hero-date{
-    margin-top:28px;
+    margin-top:30px;
+
     font-family:'Cormorant Garamond',serif;
+
     font-size:25px;
+
     letter-spacing:7px;
 }
+
 
 /* =========================================================
    INTRO
 ========================================================= */
 
 .intro{
-    padding:120px 20px 100px;
+    padding:120px 20px 105px;
+
     text-align:center;
+
     max-width:900px;
+
     margin:auto;
 }
 
 .ornament{
     font-family:'Cormorant Garamond',serif;
+
     font-size:35px;
+
     color:var(--champagne);
+
     margin-bottom:25px;
 }
 
 .section-label{
     font-size:10px;
+
     letter-spacing:5px;
+
     text-transform:uppercase;
+
     color:#9d8b77;
+
     margin-bottom:25px;
 }
 
 .intro h2{
     font-family:'Cormorant Garamond',serif;
+
     font-size:clamp(42px,6vw,70px);
+
     font-weight:400;
+
     margin-bottom:30px;
 }
 
 .intro p{
-    max-width:650px;
+    max-width:680px;
+
     margin:auto;
+
     font-family:'Cormorant Garamond',serif;
+
     font-size:24px;
-    line-height:1.7;
+
+    line-height:1.75;
+
     color:#62574f;
 }
+
 
 /* =========================================================
    DATE
@@ -208,23 +302,32 @@ body{
 
 .date-section{
     background:#eee5da;
-    padding:90px 20px;
+
+    padding:95px 20px;
+
     text-align:center;
 }
 
 .big-date{
     font-family:'Cormorant Garamond',serif;
+
     font-size:clamp(65px,12vw,150px);
+
     font-weight:300;
+
     line-height:1;
 }
 
 .date-month{
-    margin-top:15px;
-    font-size:12px;
+    margin-top:18px;
+
+    font-size:11px;
+
     letter-spacing:6px;
+
     text-transform:uppercase;
 }
+
 
 /* =========================================================
    COUNTDOWN
@@ -232,9 +335,13 @@ body{
 
 .countdown{
     display:flex;
+
     justify-content:center;
-    gap:50px;
+
+    gap:55px;
+
     margin-top:55px;
+
     flex-wrap:wrap;
 }
 
@@ -244,16 +351,22 @@ body{
 
 .count-number{
     font-family:'Cormorant Garamond',serif;
+
     font-size:48px;
+
     font-weight:400;
 }
 
 .count-label{
     font-size:9px;
+
     letter-spacing:3px;
+
     text-transform:uppercase;
+
     margin-top:5px;
 }
+
 
 /* =========================================================
    EVENTS
@@ -261,53 +374,73 @@ body{
 
 .events{
     padding:120px 20px;
+
     max-width:1100px;
+
     margin:auto;
 }
 
 .events-title{
     text-align:center;
-    margin-bottom:80px;
+
+    margin-bottom:75px;
 }
 
 .events-title h2{
     font-family:'Cormorant Garamond',serif;
+
     font-size:65px;
+
     font-weight:400;
 }
 
 .event{
     display:grid;
-    grid-template-columns:140px 1fr 300px;
+
+    grid-template-columns:140px 1fr;
+
     gap:45px;
+
     align-items:center;
-    padding:45px 0;
+
+    padding:48px 0;
+
     border-bottom:1px solid rgba(100,80,60,.15);
 }
 
 .event-time{
     font-family:'Cormorant Garamond',serif;
-    font-size:30px;
+
+    font-size:32px;
 }
 
 .event-info h3{
     font-family:'Cormorant Garamond',serif;
-    font-size:35px;
+
+    font-size:37px;
+
     font-weight:500;
-    margin-bottom:8px;
+
+    margin-bottom:10px;
 }
 
 .event-info p{
-    font-size:12px;
+    font-size:11px;
+
     letter-spacing:2px;
+
     text-transform:uppercase;
+
     color:#8d7d6d;
 }
 
 .event-info a{
     color:inherit;
+
     text-decoration:none;
+
     border-bottom:1px solid #b7a38e;
+
     transition:.3s;
 }
 
@@ -315,139 +448,97 @@ body{
     color:#9b8064;
 }
 
-.event-image{
-    width:100%;
-    height:190px;
-    overflow:hidden;
-}
-
-.event-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:transform .6s ease;
-}
-
-.event:hover .event-image img{
-    transform:scale(1.05);
-}
 
 /* =========================================================
-   LOCATIONS
+   LOCATION PHOTOS
 ========================================================= */
 
-.locations{
+.location-photo-section{
     background:#f0e8df;
-    padding:120px 20px;
+
+    padding:110px 20px;
 }
 
-.locations-title{
+.location-photo-title{
     text-align:center;
-    margin-bottom:65px;
-}
 
-.locations-title h2{
-    font-family:'Cormorant Garamond',serif;
-    font-size:65px;
-    font-weight:400;
-}
-
-.location-grid{
-    max-width:1100px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-}
-
-.location-card{
-    background:white;
-    overflow:hidden;
-}
-
-.location-card img{
-    width:100%;
-    height:400px;
-    object-fit:cover;
-    display:block;
-}
-
-.location-content{
-    padding:28px 30px 35px;
-}
-
-.location-content h3{
-    font-family:'Cormorant Garamond',serif;
-    font-size:32px;
-    font-weight:500;
-    margin-bottom:8px;
-}
-
-.location-content p{
-    font-size:11px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    color:#877666;
-    line-height:1.8;
-}
-
-.location-content a{
-    color:inherit;
-    text-decoration:none;
-    border-bottom:1px solid #b7a38e;
-}
-
-.location-content a:hover{
-    color:#9b8064;
-}
-
-/* =========================================================
-   EXTRA PHOTO GALLERY
-========================================================= */
-
-.gallery{
-    padding:120px 20px;
-    background:#faf7f2;
-}
-
-.gallery-title{
-    text-align:center;
     margin-bottom:60px;
 }
 
-.gallery-title h2{
+.location-photo-title h2{
     font-family:'Cormorant Garamond',serif;
+
     font-size:65px;
+
     font-weight:400;
 }
 
-.gallery-grid{
+.location-photos{
     max-width:1100px;
+
     margin:auto;
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
 }
 
-.gallery-item{
+.location-photo{
+    background:white;
+
     overflow:hidden;
-    height:500px;
 }
 
-.gallery-item:nth-child(2){
-    margin-top:80px;
-}
-
-.gallery-item img{
+.location-photo img{
     width:100%;
-    height:100%;
+
+    height:470px;
+
     object-fit:cover;
+
+    display:block;
+
     transition:transform .8s ease;
 }
 
-.gallery-item:hover img{
+.location-photo:hover img{
     transform:scale(1.04);
 }
+
+.location-caption{
+    padding:25px 28px 30px;
+}
+
+.location-caption h3{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:32px;
+
+    font-weight:500;
+
+    margin-bottom:8px;
+}
+
+.location-caption p{
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:#877666;
+}
+
+.location-caption a{
+    color:inherit;
+
+    text-decoration:none;
+
+    border-bottom:1px solid #b7a38e;
+}
+
 
 /* =========================================================
    DRESS CODE
@@ -455,44 +546,63 @@ body{
 
 .dress{
     padding:120px 20px;
+
     text-align:center;
 }
 
 .dress h2{
     font-family:'Cormorant Garamond',serif;
+
     font-size:65px;
+
     font-weight:400;
+
     margin-bottom:18px;
 }
 
 .dress-subtitle{
     font-family:'Cormorant Garamond',serif;
+
     font-size:21px;
+
     color:#74675d;
+
     margin-bottom:45px;
 }
 
 .colors{
     display:flex;
+
     justify-content:center;
-    gap:20px;
+
+    gap:22px;
+
     flex-wrap:wrap;
 }
 
 .color{
     width:75px;
+
     height:75px;
+
     border-radius:50%;
+
     border:5px solid var(--cream);
-    box-shadow:0 0 0 1px rgba(70,50,40,.15);
+
+    box-shadow:
+        0 0 0 1px rgba(70,50,40,.15);
 }
 
 .color-name{
     margin-top:10px;
+
     font-size:9px;
+
     letter-spacing:2px;
+
     text-transform:uppercase;
 }
+
 
 /* =========================================================
    RSVP
@@ -500,35 +610,49 @@ body{
 
 .rsvp{
     background:#e8ddd0;
+
     padding:120px 20px;
+
     text-align:center;
 }
 
 .rsvp h2{
     font-family:'Cormorant Garamond',serif;
+
     font-size:70px;
+
     font-weight:400;
+
     margin-bottom:15px;
 }
 
-.rsvp p{
+.rsvp > p{
     font-family:'Cormorant Garamond',serif;
+
     font-size:21px;
+
     margin-bottom:45px;
 }
 
 .rsvp-form{
     max-width:550px;
+
     margin:auto;
+
     text-align:left;
 }
 
 .form-label{
     display:block;
+
     font-size:10px;
+
     letter-spacing:3px;
+
     text-transform:uppercase;
+
     color:#76675b;
+
     margin:15px 0 8px;
 }
 
@@ -536,14 +660,23 @@ body{
 .rsvp-form select,
 .rsvp-form textarea{
     width:100%;
+
     border:none;
+
     border-bottom:1px solid #a99783;
+
     background:transparent;
-    padding:18px 5px;
+
+    padding:17px 5px;
+
     margin-bottom:15px;
+
     font-family:'Montserrat',sans-serif;
+
     font-size:13px;
+
     outline:none;
+
     color:#40362f;
 }
 
@@ -552,18 +685,18 @@ body{
 }
 
 .rsvp-form textarea{
-    height:100px;
-    resize:none;
-}
+    height:105px;
 
-.side-question{
-    margin-top:25px;
+    resize:none;
 }
 
 .side-options{
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:12px;
+
     margin:10px 0 20px;
 }
 
@@ -573,18 +706,27 @@ body{
 
 .side-option input{
     position:absolute;
+
     opacity:0;
+
     pointer-events:none;
 }
 
 .side-option label{
     display:block;
+
     text-align:center;
+
     padding:17px 10px;
+
     border:1px solid #b7a38e;
+
     cursor:pointer;
+
     font-family:'Cormorant Garamond',serif;
+
     font-size:19px;
+
     transition:.3s;
 }
 
@@ -594,21 +736,33 @@ body{
 
 .side-option input:checked + label{
     background:#453a32;
+
     color:white;
+
     border-color:#453a32;
 }
 
 .rsvp-button{
     display:block;
+
     margin:25px auto 0;
+
     background:#453a32;
+
     color:white;
+
     border:none;
+
     padding:17px 50px;
+
     letter-spacing:3px;
+
     font-size:10px;
+
     text-transform:uppercase;
+
     cursor:pointer;
+
     transition:.3s;
 }
 
@@ -616,13 +770,47 @@ body{
     background:#8c7965;
 }
 
+.rsvp-button:disabled{
+    opacity:.6;
+
+    cursor:wait;
+}
+
 .form-note{
     text-align:center;
+
     font-size:10px;
+
     color:#8b7969;
+
     margin-top:20px;
+
     line-height:1.6;
 }
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.rsvp-success{
+    display:none;
+
+    max-width:500px;
+
+    margin:30px auto 0;
+
+    padding:20px;
+
+    background:rgba(255,255,255,.35);
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:22px;
+
+    text-align:center;
+}
+
 
 /* =========================================================
    FINAL
@@ -630,32 +818,46 @@ body{
 
 .final{
     padding:130px 20px;
+
     text-align:center;
+
     background:#faf7f2;
 }
 
 .final-small{
     font-size:10px;
+
     letter-spacing:5px;
+
     text-transform:uppercase;
+
     color:#a18e7a;
+
     margin-bottom:30px;
 }
 
 .final h2{
     font-family:'Cormorant Garamond',serif;
+
     font-size:clamp(55px,9vw,105px);
+
     font-weight:300;
 }
 
 .final p{
-    max-width:600px;
+    max-width:620px;
+
     margin:30px auto 0;
+
     font-family:'Cormorant Garamond',serif;
+
     font-size:24px;
+
     line-height:1.6;
+
     color:#675b52;
 }
+
 
 /* =========================================================
    FOOTER
@@ -663,13 +865,20 @@ body{
 
 footer{
     padding:30px;
+
     text-align:center;
+
     background:#453a32;
+
     color:#ddd1c3;
+
     font-size:9px;
+
     letter-spacing:3px;
+
     text-transform:uppercase;
 }
+
 
 /* =========================================================
    MOBILE
@@ -677,22 +886,27 @@ footer{
 
 @media(max-width:750px){
 
-    .music-player{
-        top:15px;
+    .page-controls{
         right:15px;
+
+        bottom:15px;
     }
 
     .music-btn{
-        width:42px;
-        height:42px;
+        width:44px;
+
+        height:44px;
     }
 
-    .volume{
-        display:none;
+    .language-select{
+        height:44px;
+
+        padding:0 12px;
     }
 
     .hero{
         height:88vh;
+
         min-height:600px;
     }
 
@@ -706,13 +920,17 @@ footer{
 
     .names span{
         display:block;
+
         font-size:.45em;
+
         margin:12px 0;
+
         line-height:.5;
     }
 
     .hero-date{
         font-size:18px;
+
         letter-spacing:4px;
     }
 
@@ -745,56 +963,37 @@ footer{
     }
 
     .events-title h2,
-    .locations-title h2,
-    .dress h2,
-    .gallery-title h2{
+    .location-photo-title h2,
+    .dress h2{
         font-size:50px;
     }
 
     .event{
         grid-template-columns:1fr;
-        gap:12px;
+
+        gap:10px;
+
         padding:40px 0;
     }
 
     .event-time{
-        font-size:24px;
+        font-size:25px;
     }
 
     .event-info h3{
         font-size:31px;
     }
 
-    .event-image{
-        height:240px;
-        margin-top:15px;
-    }
-
-    .location-grid{
-        grid-template-columns:1fr;
-    }
-
-    .location-card img{
-        height:280px;
-    }
-
-    .locations{
+    .location-photo-section{
         padding:85px 20px;
     }
 
-    .gallery{
-        padding:85px 20px;
-    }
-
-    .gallery-grid{
+    .location-photos{
         grid-template-columns:1fr;
-        gap:18px;
     }
 
-    .gallery-item,
-    .gallery-item:nth-child(2){
-        height:430px;
-        margin-top:0;
+    .location-photo img{
+        height:330px;
     }
 
     .dress{
@@ -813,9 +1012,24 @@ footer{
         grid-template-columns:1fr;
     }
 
+    .final{
+        padding:100px 20px;
+    }
+
+}
+
+
+/* =========================================================
+   ARMENIAN / RUSSIAN TEXT
+========================================================= */
+
+html[lang="hy"] body,
+html[lang="ru"] body{
+    letter-spacing:0;
 }
 
 </style>
+
 </head>
 
 
@@ -826,32 +1040,60 @@ footer{
      MUSIC
 ========================================================= -->
 
-<audio id="weddingMusic" loop preload="auto">
-    <!-- Upload your legally obtained Adele - Lovesong file
-         and name it: lovesong.mp3 -->
-    <source src="lovesong.mp3" type="audio/mpeg">
+<audio
+    id="weddingMusic"
+    loop
+    preload="auto">
+
+    <!--
+    Put your legally obtained audio file
+    in the same folder as this HTML file
+    and name it:
+
+    lovesong.mp3
+    -->
+
+    <source
+        src="lovesong.mp3"
+        type="audio/mpeg">
+
 </audio>
 
-<div class="music-player">
+
+<!-- =========================================================
+     LANGUAGE + MUSIC CONTROLS
+========================================================= -->
+
+<div class="page-controls">
+
+    <select
+        id="languageSelect"
+        class="language-select"
+        aria-label="Language">
+
+        <option value="en">
+            English
+        </option>
+
+        <option value="hy">
+            Հայերեն
+        </option>
+
+        <option value="ru">
+            Русский
+        </option>
+
+    </select>
+
 
     <button
-        class="music-btn"
         id="musicButton"
-        aria-label="Play or pause music">
+        class="music-btn"
+        aria-label="Pause music">
 
-        ▶
+        Ⅱ
 
     </button>
-
-    <input
-        class="volume"
-        id="volumeControl"
-        type="range"
-        min="0"
-        max="1"
-        step="0.01"
-        value="0.7"
-        aria-label="Volume">
 
 </div>
 
@@ -868,7 +1110,9 @@ footer{
 
     <div class="hero-content">
 
-        <div class="hero-small">
+        <div
+            class="hero-small"
+            data-i18n="together">
             Together with their families
         </div>
 
@@ -891,15 +1135,21 @@ footer{
 
 <section class="intro">
 
-    <div class="ornament">♡</div>
+    <div class="ornament">
+        ♡
+    </div>
 
-    <div class="section-label">
+    <div
+        class="section-label"
+        data-i18n="ourWedding">
         Our Wedding Day
     </div>
 
-    <h2>Dear Guests,</h2>
+    <h2 data-i18n="dearGuests">
+        Dear Guests,
+    </h2>
 
-    <p>
+    <p data-i18n="introText">
         We would be delighted if you shared one of the most
         moving and important moments of our lives with us —
         <em>our wedding day.</em>
@@ -914,7 +1164,9 @@ footer{
 
 <section class="date-section">
 
-    <div class="section-label">
+    <div
+        class="section-label"
+        data-i18n="saveDate">
         Save the Date
     </div>
 
@@ -922,30 +1174,80 @@ footer{
         28.08.2028
     </div>
 
-    <div class="date-month">
+    <div
+        class="date-month"
+        data-i18n="august">
         August · 2028
     </div>
+
 
     <div class="countdown">
 
         <div class="count-box">
-            <div class="count-number" id="days">000</div>
-            <div class="count-label">Days</div>
+
+            <div
+                class="count-number"
+                id="days">
+                000
+            </div>
+
+            <div
+                class="count-label"
+                data-i18n="days">
+                Days
+            </div>
+
         </div>
 
-        <div class="count-box">
-            <div class="count-number" id="hours">00</div>
-            <div class="count-label">Hours</div>
-        </div>
 
         <div class="count-box">
-            <div class="count-number" id="minutes">00</div>
-            <div class="count-label">Minutes</div>
+
+            <div
+                class="count-number"
+                id="hours">
+                00
+            </div>
+
+            <div
+                class="count-label"
+                data-i18n="hours">
+                Hours
+            </div>
+
         </div>
 
+
         <div class="count-box">
-            <div class="count-number" id="seconds">00</div>
-            <div class="count-label">Seconds</div>
+
+            <div
+                class="count-number"
+                id="minutes">
+                00
+            </div>
+
+            <div
+                class="count-label"
+                data-i18n="minutes">
+                Minutes
+            </div>
+
+        </div>
+
+
+        <div class="count-box">
+
+            <div
+                class="count-number"
+                id="seconds">
+                00
+            </div>
+
+            <div
+                class="count-label"
+                data-i18n="seconds">
+                Seconds
+            </div>
+
         </div>
 
     </div>
@@ -954,23 +1256,27 @@ footer{
 
 
 <!-- =========================================================
-     EVENTS
+     WEDDING DAY
 ========================================================= -->
 
 <section class="events">
 
     <div class="events-title">
 
-        <div class="section-label">
+        <div
+            class="section-label"
+            data-i18n="theDay">
             The Day
         </div>
 
-        <h2>Our Celebration</h2>
+        <h2 data-i18n="celebration">
+            Our Celebration
+        </h2>
 
     </div>
 
 
-    <!-- BRIDE -->
+    <!-- BRIDE'S HOUSE -->
 
     <div class="event">
 
@@ -980,33 +1286,37 @@ footer{
 
         <div class="event-info">
 
-            <h3>Bride's House</h3>
+            <h3 data-i18n="brideHouse">
+                Bride's House
+            </h3>
 
             <p>
+
                 <a
                     href="https://www.google.com/maps/search/?api=1&query=Tumanyan+49+Masis+Armenia"
                     target="_blank"
                     rel="noopener">
 
-                    Tumanyan 49 · Open in Maps
+                    <span data-i18n="tumanyan49">
+                        Tumanyan 49
+                    </span>
+
+                    ·
+
+                    <span data-i18n="openMaps">
+                        Open in Maps
+                    </span>
 
                 </a>
+
             </p>
-
-        </div>
-
-        <div class="event-image">
-
-            <img
-                src="IMG_3947.JPG"
-                alt="Bride's house">
 
         </div>
 
     </div>
 
 
-    <!-- GROOM -->
+    <!-- GROOM'S HOUSE -->
 
     <div class="event">
 
@@ -1016,26 +1326,30 @@ footer{
 
         <div class="event-info">
 
-            <h3>Groom's House</h3>
+            <h3 data-i18n="groomHouse">
+                Groom's House
+            </h3>
 
             <p>
+
                 <a
                     href="https://www.google.com/maps/search/?api=1&query=Tumanyan+32+Masis+Armenia"
                     target="_blank"
                     rel="noopener">
 
-                    Tumanyan 32 · Open in Maps
+                    <span data-i18n="tumanyan32">
+                        Tumanyan 32
+                    </span>
+
+                    ·
+
+                    <span data-i18n="openMaps">
+                        Open in Maps
+                    </span>
 
                 </a>
+
             </p>
-
-        </div>
-
-        <div class="event-image">
-
-            <img
-                src="IMG_3957.JPG"
-                alt="Groom's house">
 
         </div>
 
@@ -1052,7 +1366,9 @@ footer{
 
         <div class="event-info">
 
-            <h3>Church Ceremony</h3>
+            <h3 data-i18n="church">
+                Church Ceremony
+            </h3>
 
             <p>
 
@@ -1061,19 +1377,19 @@ footer{
                     target="_blank"
                     rel="noopener">
 
-                    St. Grigor Lusavorich · Masis · Open in Maps
+                    <span data-i18n="churchLocation">
+                        St. Grigor Lusavorich · Masis
+                    </span>
+
+                    ·
+
+                    <span data-i18n="openMaps">
+                        Open in Maps
+                    </span>
 
                 </a>
 
             </p>
-
-        </div>
-
-        <div class="event-image">
-
-            <img
-                src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1000&q=85"
-                alt="Church ceremony">
 
         </div>
 
@@ -1090,7 +1406,9 @@ footer{
 
         <div class="event-info">
 
-            <h3>Wedding Reception</h3>
+            <h3 data-i18n="reception">
+                Wedding Reception
+            </h3>
 
             <p>
 
@@ -1099,19 +1417,19 @@ footer{
                     target="_blank"
                     rel="noopener">
 
-                    Adana Complex · Open in Maps
+                    <span data-i18n="adana">
+                        Adana Complex
+                    </span>
+
+                    ·
+
+                    <span data-i18n="openMaps">
+                        Open in Maps
+                    </span>
 
                 </a>
 
             </p>
-
-        </div>
-
-        <div class="event-image">
-
-            <img
-                src="https://www.venue.am/venues/uploads/v-03b34360024b-1784362120555.png"
-                alt="Adana Complex">
 
         </div>
 
@@ -1121,34 +1439,42 @@ footer{
 
 
 <!-- =========================================================
-     LOCATIONS
+     LOCATION PHOTOS
 ========================================================= -->
 
-<section class="locations">
+<section class="location-photo-section">
 
-    <div class="locations-title">
+    <div class="location-photo-title">
 
-        <div class="section-label">
-            Where We Meet
+        <div
+            class="section-label"
+            data-i18n="places">
+            Our Places
         </div>
 
-        <h2>Our Locations</h2>
+        <h2 data-i18n="whereWeMeet">
+            Where We Meet
+        </h2>
 
     </div>
 
 
-    <div class="location-grid">
+    <div class="location-photos">
 
 
-        <div class="location-card">
+        <!-- CHURCH PHOTO -->
+
+        <div class="location-photo">
 
             <img
-                src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1200&q=85"
-                alt="St Grigor Lusavorich Church">
+                src="1508339393831241403.jpg"
+                alt="St. Grigor Lusavorich Church">
 
-            <div class="location-content">
+            <div class="location-caption">
 
-                <h3>St. Grigor Lusavorich</h3>
+                <h3>
+                    St. Grigor Lusavorich
+                </h3>
 
                 <p>
 
@@ -1157,7 +1483,15 @@ footer{
                         target="_blank"
                         rel="noopener">
 
-                        Masis, Armenia · View Map
+                        <span data-i18n="masisArmenia">
+                            Masis, Armenia
+                        </span>
+
+                        ·
+
+                        <span data-i18n="viewMap">
+                            View Map
+                        </span>
 
                     </a>
 
@@ -1168,15 +1502,19 @@ footer{
         </div>
 
 
-        <div class="location-card">
+        <!-- RESTAURANT PHOTO -->
+
+        <div class="location-photo">
 
             <img
-                src="https://www.venue.am/venues/uploads/v-03b34360024b-1784362120555.png"
+                src="images.jpeg"
                 alt="Adana Complex">
 
-            <div class="location-content">
+            <div class="location-caption">
 
-                <h3>Adana Complex</h3>
+                <h3>
+                    Adana Complex
+                </h3>
 
                 <p>
 
@@ -1185,7 +1523,9 @@ footer{
                         target="_blank"
                         rel="noopener">
 
-                        View location on Google Maps
+                        <span data-i18n="viewLocation">
+                            View location on Google Maps
+                        </span>
 
                     </a>
 
@@ -1194,6 +1534,7 @@ footer{
             </div>
 
         </div>
+
 
     </div>
 
@@ -1206,42 +1547,105 @@ footer{
 
 <section class="dress">
 
-    <div class="section-label">
+    <div
+        class="section-label"
+        data-i18n="dressCode">
         Dress Code
     </div>
 
-    <h2>Soft & Elegant</h2>
+    <h2 data-i18n="softElegant">
+        Soft & Elegant
+    </h2>
 
-    <div class="dress-subtitle">
+    <div
+        class="dress-subtitle"
+        data-i18n="dressText">
         We would love to see you in our wedding palette.
     </div>
 
+
     <div class="colors">
 
-        <div>
-            <div class="color" style="background:#F4E9DC;"></div>
-            <div class="color-name">Ivory</div>
-        </div>
 
         <div>
-            <div class="color" style="background:#DCC8B4;"></div>
-            <div class="color-name">Champagne</div>
+
+            <div
+                class="color"
+                style="background:#F4E9DC;">
+            </div>
+
+            <div
+                class="color-name"
+                data-i18n="ivory">
+                Ivory
+            </div>
+
         </div>
 
-        <div>
-            <div class="color" style="background:#B89B82;"></div>
-            <div class="color-name">Taupe</div>
-        </div>
 
         <div>
-            <div class="color" style="background:#A9867B;"></div>
-            <div class="color-name">Dusty Rose</div>
+
+            <div
+                class="color"
+                style="background:#DCC8B4;">
+            </div>
+
+            <div
+                class="color-name"
+                data-i18n="champagne">
+                Champagne
+            </div>
+
         </div>
 
+
         <div>
-            <div class="color" style="background:#6F6259;"></div>
-            <div class="color-name">Mocha</div>
+
+            <div
+                class="color"
+                style="background:#B89B82;">
+            </div>
+
+            <div
+                class="color-name"
+                data-i18n="taupe">
+                Taupe
+            </div>
+
         </div>
+
+
+        <div>
+
+            <div
+                class="color"
+                style="background:#A9867B;">
+            </div>
+
+            <div
+                class="color-name"
+                data-i18n="dustyRose">
+                Dusty Rose
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div
+                class="color"
+                style="background:#6F6259;">
+            </div>
+
+            <div
+                class="color-name"
+                data-i18n="mocha">
+                Mocha
+            </div>
+
+        </div>
+
 
     </div>
 
@@ -1254,13 +1658,17 @@ footer{
 
 <section class="rsvp">
 
-    <div class="section-label">
+    <div
+        class="section-label"
+        data-i18n="kindlyRespond">
         Kindly Respond
     </div>
 
-    <h2>Will You Join Us?</h2>
+    <h2 data-i18n="willYouJoin">
+        Will You Join Us?
+    </h2>
 
-    <p>
+    <p data-i18n="presence">
         Your presence would mean the world to us.
     </p>
 
@@ -1268,70 +1676,111 @@ footer{
     <form
         class="rsvp-form"
         id="rsvpForm"
+
+        action="https://script.google.com/macros/s/AKfycbzgWnlqmWyHUPEQQ19V8yvukmt3MZGrp6r8Nz4BEzGqSTUWfDc-EotY4sBae3xotarO/exec"
+
+        method="POST"
+
+        target="rsvpFrame"
+
+
         onsubmit="submitRSVP(event)">
 
 
-        <label class="form-label">
+        <!-- NAME -->
+
+        <label
+            class="form-label"
+            data-i18n="yourName">
             Your Name
         </label>
 
         <input
             id="guestName"
+            name="name"
             type="text"
             placeholder="Enter your name"
+            data-placeholder="namePlaceholder"
             required>
 
 
-        <label class="form-label">
+        <!-- ATTENDANCE -->
+
+        <label
+            class="form-label"
+            data-i18n="attendanceLabel">
             Will you attend?
         </label>
 
         <select
             id="attendance"
+            name="attendance"
             required>
 
-            <option value="">
+            <option
+                value=""
+                data-i18n="choose">
                 Please choose
             </option>
 
-            <option value="Yes">
+            <option
+                value="Yes"
+                data-i18n="yes">
                 Yes, with pleasure
             </option>
 
-            <option value="No">
+            <option
+                value="No"
+                data-i18n="no">
                 Unfortunately, I can't attend
             </option>
 
         </select>
 
 
-        <label class="form-label">
+        <!-- NUMBER -->
+
+        <label
+            class="form-label"
+            data-i18n="numberGuests">
             Number of Guests
         </label>
 
-        <select id="guestCount">
+        <select
+            id="guestCount"
+            name="guests"
+            required>
 
-            <option value="">
+            <option
+                value=""
+                data-i18n="selectNumber">
                 Select number
             </option>
 
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
+            <option value="1">1</option>
+
+            <option value="2">2</option>
+
+            <option value="3">3</option>
+
+            <option value="4">4</option>
 
         </select>
 
 
-        <!-- BRIDE / GROOM SIDE -->
+        <!-- SIDE -->
 
         <div class="side-question">
 
-            <label class="form-label">
+            <label
+                class="form-label"
+                data-i18n="comingFrom">
                 From whose side are you coming?
             </label>
 
+
             <div class="side-options">
+
 
                 <div class="side-option">
 
@@ -1339,10 +1788,12 @@ footer{
                         type="radio"
                         id="brideSide"
                         name="side"
-                        value="Bride's side"
+                        value="Bride's Side"
                         required>
 
-                    <label for="brideSide">
+                    <label
+                        for="brideSide"
+                        data-i18n="brideSide">
                         Bride's Side
                     </label>
 
@@ -1355,115 +1806,118 @@ footer{
                         type="radio"
                         id="groomSide"
                         name="side"
-                        value="Groom's side">
+                        value="Groom's Side">
 
-                    <label for="groomSide">
+                    <label
+                        for="groomSide"
+                        data-i18n="groomSide">
                         Groom's Side
                     </label>
 
                 </div>
+
 
             </div>
 
         </div>
 
 
-        <label class="form-label">
+        <!-- MESSAGE -->
+
+        <label
+            class="form-label"
+            data-i18n="messageLabel">
             Message
         </label>
 
         <textarea
             id="message"
-            placeholder="Leave us a little message..."></textarea>
+            name="message"
+            placeholder="Leave us a little message..."
+            data-placeholder="messagePlaceholder">
+        </textarea>
 
+
+        <!-- BUTTON -->
 
         <button
             class="rsvp-button"
-            type="submit">
+            id="rsvpButton"
+            type="submit"
+            data-i18n="sendRSVP">
 
             Send RSVP
 
         </button>
 
-        <div class="form-note">
 
-            Your response will be prepared for submission
-            once the RSVP form is connected to your chosen
-            receiving service.
+        <div
+            class="form-note"
+            data-i18n="formNote">
+
+            Your response will be securely added to
+            our wedding guest list.
 
         </div>
+
+
+        <div
+            id="rsvpSuccess"
+            class="rsvp-success"
+            data-i18n="success">
+
+            Thank you! Your RSVP has been received. ♡
+
+        </div>
+
 
     </form>
 
-</section>
 
+    <!-- HIDDEN GOOGLE RESPONSE FRAME -->
 
-<!-- =========================================================
-     FINAL PHOTO GALLERY
-========================================================= -->
-
-<section class="gallery">
-
-    <div class="gallery-title">
-
-        <div class="section-label">
-            A Little More Of Us
-        </div>
-
-        <h2>Our Story</h2>
-
-    </div>
-
-
-    <div class="gallery-grid">
-
-
-        <div class="gallery-item">
-
-            <img
-                src="images.jpeg"
-                alt="Alen and Mane">
-
-        </div>
-
-
-        <div class="gallery-item">
-
-            <img
-                src="1508339393831241403.jpg"
-                alt="Alen and Mane">
-
-        </div>
-
-
-    </div>
+    <iframe
+        name="rsvpFrame"
+        id="rsvpFrame"
+        style="display:none;">
+    </iframe>
 
 </section>
 
 
 <!-- =========================================================
-     FINAL MESSAGE
+     FINAL
 ========================================================= -->
 
 <section class="final">
 
-    <div class="final-small">
+    <div
+        class="final-small"
+        data-i18n="withLove">
         With all our love
     </div>
 
-    <h2>Alen & Mane</h2>
+    <h2>
+        Alen & Mane
+    </h2>
 
-    <p>
+    <p data-i18n="thankYou">
         Thank you for sharing the most precious moment
         of our lives with us.
     </p>
 
-    <div class="ornament" style="margin-top:35px;">
+    <div
+        class="ornament"
+        style="margin-top:35px;">
         ♡
     </div>
 
 </section>
 
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
@@ -1475,66 +1929,727 @@ footer{
 <script>
 
 /* =========================================================
+   TRANSLATIONS
+========================================================= */
+
+const translations = {
+
+    en: {
+
+        together:
+            "Together with their families",
+
+        ourWedding:
+            "Our Wedding Day",
+
+        dearGuests:
+            "Dear Guests,",
+
+        introText:
+            "We would be delighted if you shared one of the most moving and important moments of our lives with us — our wedding day.",
+
+        saveDate:
+            "Save the Date",
+
+        august:
+            "August · 2028",
+
+        days:
+            "Days",
+
+        hours:
+            "Hours",
+
+        minutes:
+            "Minutes",
+
+        seconds:
+            "Seconds",
+
+        theDay:
+            "The Day",
+
+        celebration:
+            "Our Celebration",
+
+        brideHouse:
+            "Bride's House",
+
+        groomHouse:
+            "Groom's House",
+
+        church:
+            "Church Ceremony",
+
+        reception:
+            "Wedding Reception",
+
+        tumanyan49:
+            "Tumanyan 49",
+
+        tumanyan32:
+            "Tumanyan 32",
+
+        churchLocation:
+            "St. Grigor Lusavorich · Masis",
+
+        adana:
+            "Adana Complex",
+
+        openMaps:
+            "Open in Maps",
+
+        places:
+            "Our Places",
+
+        whereWeMeet:
+            "Where We Meet",
+
+        masisArmenia:
+            "Masis, Armenia",
+
+        viewMap:
+            "View Map",
+
+        viewLocation:
+            "View location on Google Maps",
+
+        dressCode:
+            "Dress Code",
+
+        softElegant:
+            "Soft & Elegant",
+
+        dressText:
+            "We would love to see you in our wedding palette.",
+
+        ivory:
+            "Ivory",
+
+        champagne:
+            "Champagne",
+
+        taupe:
+            "Taupe",
+
+        dustyRose:
+            "Dusty Rose",
+
+        mocha:
+            "Mocha",
+
+        kindlyRespond:
+            "Kindly Respond",
+
+        willYouJoin:
+            "Will You Join Us?",
+
+        presence:
+            "Your presence would mean the world to us.",
+
+        yourName:
+            "Your Name",
+
+        namePlaceholder:
+            "Enter your name",
+
+        attendanceLabel:
+            "Will you attend?",
+
+        choose:
+            "Please choose",
+
+        yes:
+            "Yes, with pleasure",
+
+        no:
+            "Unfortunately, I can't attend",
+
+        numberGuests:
+            "Number of Guests",
+
+        selectNumber:
+            "Select number",
+
+        comingFrom:
+            "From whose side are you coming?",
+
+        brideSide:
+            "Bride's Side",
+
+        groomSide:
+            "Groom's Side",
+
+        messageLabel:
+            "Message",
+
+        messagePlaceholder:
+            "Leave us a little message...",
+
+        sendRSVP:
+            "Send RSVP",
+
+        formNote:
+            "Your response will be securely added to our wedding guest list.",
+
+        success:
+            "Thank you! Your RSVP has been received. ♡",
+
+        sending:
+            "Sending...",
+
+        withLove:
+            "With all our love",
+
+        thankYou:
+            "Thank you for sharing the most precious moment of our lives with us."
+
+    },
+
+
+    hy: {
+
+        together:
+            "Ընտանիքների հետ միասին",
+
+        ourWedding:
+            "Մեր հարսանիքի օրը",
+
+        dearGuests:
+            "Սիրելի հյուրեր,",
+
+        introText:
+            "Մենք մեծ ուրախությամբ կկիսվենք ձեզ հետ մեր կյանքի ամենահուզիչ և կարևոր պահերից մեկով՝ մեր հարսանիքի օրով։",
+
+        saveDate:
+            "Պահպանեք այս օրը",
+
+        august:
+            "Օգոստոս · 2028",
+
+        days:
+            "Օր",
+
+        hours:
+            "Ժամ",
+
+        minutes:
+            "Րոպե",
+
+        seconds:
+            "Վայրկյան",
+
+        theDay:
+            "Օրվա ծրագիրը",
+
+        celebration:
+            "Մեր տոնակատարությունը",
+
+        brideHouse:
+            "Հարսի տուն",
+
+        groomHouse:
+            "Փեսայի տուն",
+
+        church:
+            "Պսակադրություն",
+
+        reception:
+            "Հարսանեկան խնջույք",
+
+        tumanyan49:
+            "Թումանյան 49",
+
+        tumanyan32:
+            "Թումանյան 32",
+
+        churchLocation:
+            "Սուրբ Գրիգոր Լուսավորիչ · Մասիս",
+
+        adana:
+            "Adana Complex",
+
+        openMaps:
+            "Բացել քարտեզում",
+
+        places:
+            "Մեր վայրերը",
+
+        whereWeMeet:
+            "Որտեղ կհանդիպենք",
+
+        masisArmenia:
+            "Մասիս, Հայաստան",
+
+        viewMap:
+            "Դիտել քարտեզը",
+
+        viewLocation:
+            "Դիտել վայրը Google Maps-ում",
+
+        dressCode:
+            "Հագուստի դրես-կոդ",
+
+        softElegant:
+            "Նուրբ և էլեգանտ",
+
+        dressText:
+            "Ուրախ կլինենք տեսնել ձեզ մեր հարսանեկան գունային երանգներով։",
+
+        ivory:
+            "Փղոսկրի",
+
+        champagne:
+            "Շամպայն",
+
+        taupe:
+            "Տաուպ",
+
+        dustyRose:
+            "Փոշոտ վարդագույն",
+
+        mocha:
+            "Մոկկա",
+
+        kindlyRespond:
+            "Խնդրում ենք պատասխանել",
+
+        willYouJoin:
+            "Կմիանա՞ք մեզ",
+
+        presence:
+            "Ձեր ներկայությունը մեզ համար անչափ կարևոր է։",
+
+        yourName:
+            "Ձեր անունը",
+
+        namePlaceholder:
+            "Մուտքագրեք ձեր անունը",
+
+        attendanceLabel:
+            "Կմասնակցե՞ք",
+
+        choose:
+            "Խնդրում ենք ընտրել",
+
+        yes:
+            "Այո, սիրով",
+
+        no:
+            "Ցավոք, չեմ կարող մասնակցել",
+
+        numberGuests:
+            "Հյուրերի քանակը",
+
+        selectNumber:
+            "Ընտրեք քանակը",
+
+        comingFrom:
+            "Ո՞ր կողմի կողմից եք գալիս",
+
+        brideSide:
+            "Հարսի կողմ",
+
+        groomSide:
+            "Փեսայի կողմ",
+
+        messageLabel:
+            "Հաղորդագրություն",
+
+        messagePlaceholder:
+            "Թողեք մեզ փոքրիկ հաղորդագրություն...",
+
+        sendRSVP:
+            "Ուղարկել RSVP",
+
+        formNote:
+            "Ձեր պատասխանը ապահով կերպով կավելացվի մեր հարսանեկան հյուրերի ցանկում։",
+
+        success:
+            "Շնորհակալություն։ Ձեր RSVP-ն ստացվել է։ ♡",
+
+        sending:
+            "Ուղարկվում է...",
+
+        withLove:
+            "Մեր ողջ սիրով",
+
+        thankYou:
+            "Շնորհակալ ենք, որ մեզ հետ կիսում եք մեր կյանքի ամենաթանկ պահը։"
+
+    },
+
+
+    ru: {
+
+        together:
+            "Вместе со своими семьями",
+
+        ourWedding:
+            "День нашей свадьбы",
+
+        dearGuests:
+            "Дорогие гости,",
+
+        introText:
+            "Мы будем счастливы разделить с вами один из самых трогательных и важных моментов нашей жизни — день нашей свадьбы.",
+
+        saveDate:
+            "Сохраните дату",
+
+        august:
+            "Август · 2028",
+
+        days:
+            "Дней",
+
+        hours:
+            "Часов",
+
+        minutes:
+            "Минут",
+
+        seconds:
+            "Секунд",
+
+        theDay:
+            "Этот день",
+
+        celebration:
+            "Наш праздник",
+
+        brideHouse:
+            "Дом невесты",
+
+        groomHouse:
+            "Дом жениха",
+
+        church:
+            "Церемония в церкви",
+
+        reception:
+            "Свадебный банкет",
+
+        tumanyan49:
+            "Туманяна 49",
+
+        tumanyan32:
+            "Туманяна 32",
+
+        churchLocation:
+            "Святой Григорий Просветитель · Масис",
+
+        adana:
+            "Adana Complex",
+
+        openMaps:
+            "Открыть на карте",
+
+        places:
+            "Наши места",
+
+        whereWeMeet:
+            "Где мы встретимся",
+
+        masisArmenia:
+            "Масис, Армения",
+
+        viewMap:
+            "Посмотреть карту",
+
+        viewLocation:
+            "Посмотреть место в Google Maps",
+
+        dressCode:
+            "Дресс-код",
+
+        softElegant:
+            "Нежность и элегантность",
+
+        dressText:
+            "Мы будем рады видеть вас в оттенках нашей свадебной палитры.",
+
+        ivory:
+            "Айвори",
+
+        champagne:
+            "Шампань",
+
+        taupe:
+            "Тауп",
+
+        dustyRose:
+            "Пыльная роза",
+
+        mocha:
+            "Мокко",
+
+        kindlyRespond:
+            "Пожалуйста, ответьте",
+
+        willYouJoin:
+            "Вы будете с нами?",
+
+        presence:
+            "Ваше присутствие будет для нас очень важно.",
+
+        yourName:
+            "Ваше имя",
+
+        namePlaceholder:
+            "Введите ваше имя",
+
+        attendanceLabel:
+            "Вы придёте?",
+
+        choose:
+            "Пожалуйста, выберите",
+
+        yes:
+            "Да, с удовольствием",
+
+        no:
+            "К сожалению, я не смогу присутствовать",
+
+        numberGuests:
+            "Количество гостей",
+
+        selectNumber:
+            "Выберите количество",
+
+        comingFrom:
+            "С чьей стороны вы будете?",
+
+        brideSide:
+            "Со стороны невесты",
+
+        groomSide:
+            "Со стороны жениха",
+
+        messageLabel:
+            "Сообщение",
+
+        messagePlaceholder:
+            "Оставьте нам небольшое сообщение...",
+
+        sendRSVP:
+            "Отправить RSVP",
+
+        formNote:
+            "Ваш ответ будет сохранён в нашем списке свадебных гостей.",
+
+        success:
+            "Спасибо! Ваш RSVP получен. ♡",
+
+        sending:
+            "Отправляется...",
+
+        withLove:
+            "С любовью",
+
+        thankYou:
+            "Спасибо, что разделяете с нами самый дорогой момент нашей жизни."
+
+    }
+
+};
+
+
+/* =========================================================
+   LANGUAGE SWITCHER
+========================================================= */
+
+const languageSelect =
+    document.getElementById("languageSelect");
+
+
+function setLanguage(language){
+
+    const dictionary =
+        translations[language];
+
+    document.documentElement.lang =
+        language;
+
+
+    /* TEXT */
+
+    document
+        .querySelectorAll("[data-i18n]")
+        .forEach(element => {
+
+            const key =
+                element.getAttribute("data-i18n");
+
+            if(dictionary[key]){
+                element.textContent =
+                    dictionary[key];
+            }
+
+        });
+
+
+    /* PLACEHOLDERS */
+
+    document
+        .querySelectorAll("[data-placeholder]")
+        .forEach(element => {
+
+            const key =
+                element.getAttribute(
+                    "data-placeholder"
+                );
+
+            if(dictionary[key]){
+                element.placeholder =
+                    dictionary[key];
+            }
+
+        });
+
+
+    /* RSVP BUTTON */
+
+    if(!document
+        .getElementById("rsvpButton")
+        .disabled){
+
+        document
+            .getElementById("rsvpButton")
+            .textContent =
+                dictionary.sendRSVP;
+
+    }
+
+
+    /* SAVE LANGUAGE */
+
+    localStorage.setItem(
+        "weddingLanguage",
+        language
+    );
+
+}
+
+
+/* LOAD SAVED LANGUAGE */
+
+const savedLanguage =
+    localStorage.getItem("weddingLanguage") || "en";
+
+languageSelect.value =
+    savedLanguage;
+
+setLanguage(savedLanguage);
+
+
+languageSelect.addEventListener(
+    "change",
+    function(){
+
+        setLanguage(this.value);
+
+    }
+);
+
+
+/* =========================================================
    COUNTDOWN
 ========================================================= */
 
 const weddingDate =
-    new Date("August 28, 2028 15:30:00").getTime();
+    new Date(
+        "August 28, 2028 15:30:00"
+    ).getTime();
+
 
 function updateCountdown(){
 
-    const now = new Date().getTime();
+    const now =
+        new Date().getTime();
 
-    const distance = weddingDate - now;
+    const distance =
+        weddingDate - now;
+
 
     if(distance <= 0){
 
-        document.getElementById("days").innerHTML = "000";
-        document.getElementById("hours").innerHTML = "00";
-        document.getElementById("minutes").innerHTML = "00";
-        document.getElementById("seconds").innerHTML = "00";
+        document.getElementById("days")
+            .textContent = "000";
+
+        document.getElementById("hours")
+            .textContent = "00";
+
+        document.getElementById("minutes")
+            .textContent = "00";
+
+        document.getElementById("seconds")
+            .textContent = "00";
 
         return;
+
     }
 
+
     const days =
-        Math.floor(distance / (1000 * 60 * 60 * 24));
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
+
 
     const hours =
         Math.floor(
-            (distance % (1000 * 60 * 60 * 24))
-            / (1000 * 60 * 60)
+            (distance %
+            (1000 * 60 * 60 * 24))
+            /
+            (1000 * 60 * 60)
         );
+
 
     const minutes =
         Math.floor(
-            (distance % (1000 * 60 * 60))
-            / (1000 * 60)
+            (distance %
+            (1000 * 60 * 60))
+            /
+            (1000 * 60)
         );
+
 
     const seconds =
         Math.floor(
-            (distance % (1000 * 60))
-            / 1000
+            (distance %
+            (1000 * 60))
+            /
+            1000
         );
 
 
-    document.getElementById("days").innerHTML =
-        String(days).padStart(3,"0");
+    document.getElementById("days")
+        .textContent =
+            String(days).padStart(3,"0");
 
-    document.getElementById("hours").innerHTML =
-        String(hours).padStart(2,"0");
+    document.getElementById("hours")
+        .textContent =
+            String(hours).padStart(2,"0");
 
-    document.getElementById("minutes").innerHTML =
-        String(minutes).padStart(2,"0");
+    document.getElementById("minutes")
+        .textContent =
+            String(minutes).padStart(2,"0");
 
-    document.getElementById("seconds").innerHTML =
-        String(seconds).padStart(2,"0");
+    document.getElementById("seconds")
+        .textContent =
+            String(seconds).padStart(2,"0");
+
 }
+
 
 updateCountdown();
 
-setInterval(updateCountdown,1000);
+setInterval(
+    updateCountdown,
+    1000
+);
 
 
 /* =========================================================
@@ -1547,130 +2662,170 @@ const music =
 const musicButton =
     document.getElementById("musicButton");
 
-const volumeControl =
-    document.getElementById("volumeControl");
 
-music.volume = 0.7;
+music.volume = 0.75;
 
 
-/* Try autoplay */
+/*
+   Try to start music automatically.
 
-window.addEventListener("load", function(){
+   Some browsers block autoplay with sound.
+   If blocked, the visitor can press the
+   music button.
+*/
 
-    music.play()
-        .then(() => {
+window.addEventListener(
+    "load",
+    function(){
 
-            musicButton.innerHTML = "Ⅱ";
+        music.play()
+            .then(function(){
 
-        })
-        .catch(() => {
+                musicButton.textContent =
+                    "Ⅱ";
 
-            /*
-             Browser blocked autoplay.
-             User can press the music button.
-            */
+            })
+            .catch(function(){
 
-            musicButton.innerHTML = "▶";
+                musicButton.textContent =
+                    "▶";
 
-        });
-
-});
-
-
-/* Play / Pause */
-
-musicButton.addEventListener("click", function(){
-
-    if(music.paused){
-
-        music.play();
-
-        musicButton.innerHTML = "Ⅱ";
-
-    }else{
-
-        music.pause();
-
-        musicButton.innerHTML = "▶";
+            });
 
     }
+);
 
-});
 
+/* PLAY / PAUSE */
 
-/* Volume */
+musicButton.addEventListener(
+    "click",
+    function(){
 
-volumeControl.addEventListener("input", function(){
+        if(music.paused){
 
-    music.volume = this.value;
+            music.play();
 
-});
+            musicButton.textContent =
+                "Ⅱ";
+
+        }else{
+
+            music.pause();
+
+            musicButton.textContent =
+                "▶";
+
+        }
+
+    }
+);
 
 
 /* =========================================================
-   RSVP
+   RSVP → GOOGLE SHEETS
 ========================================================= */
+
+const rsvpForm =
+    document.getElementById("rsvpForm");
+
+const rsvpButton =
+    document.getElementById("rsvpButton");
+
+const rsvpFrame =
+    document.getElementById("rsvpFrame");
+
+const rsvpSuccess =
+    document.getElementById("rsvpSuccess");
+
 
 function submitRSVP(event){
 
     event.preventDefault();
 
 
-    const name =
-        document.getElementById("guestName").value;
+    const language =
+        languageSelect.value;
 
-    const attendance =
-        document.getElementById("attendance").value;
+    const dictionary =
+        translations[language];
 
-    const guestCount =
-        document.getElementById("guestCount").value;
 
-    const side =
-        document.querySelector(
-            'input[name="side"]:checked'
-        )?.value || "";
+    rsvpButton.disabled =
+        true;
 
-    const message =
-        document.getElementById("message").value;
+    rsvpButton.textContent =
+        dictionary.sending;
+
+
+    rsvpSuccess.style.display =
+        "none";
 
 
     /*
-       IMPORTANT:
-
-       This currently does NOT send the response
-       to your email or Google Sheets.
-
-       It only demonstrates that the form works.
-
-       Connect the form to a form service/backend
-       to actually receive responses.
+       Submit the form to the
+       Google Apps Script Web App.
     */
 
+    rsvpForm.submit();
 
-    alert(
-        "Thank you, " + name +
-        "! ♡\n\n" +
 
-        "Attendance: " + attendance +
-        "\n" +
+    /*
+       Give Google Apps Script
+       enough time to process
+       the submission.
+    */
 
-        "Guests: " + (guestCount || "Not specified") +
-        "\n" +
+    setTimeout(
+        function(){
 
-        "Coming from: " + side +
-        "\n\n" +
+            rsvpButton.disabled =
+                false;
 
-        "Your response has been prepared."
+            rsvpButton.textContent =
+                dictionary.sendRSVP;
+
+
+            rsvpSuccess.textContent =
+                dictionary.success;
+
+
+            rsvpSuccess.style.display =
+                "block";
+
+
+            rsvpForm.reset();
+
+
+        },
+        1200
     );
 
-
-    document.getElementById("rsvpForm").reset();
-
 }
+
+
+/* =========================================================
+   GOOGLE RESPONSE FRAME
+========================================================= */
+
+rsvpFrame.addEventListener(
+    "load",
+    function(){
+
+        /*
+          The iframe is intentionally
+          hidden.
+
+          Google Apps Script receives
+          the form and adds the response
+          to the Google Sheet.
+        */
+
+    }
+);
 
 </script>
 
 
 </body>
 </html>
-```
